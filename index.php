@@ -94,7 +94,7 @@
                     <p>Laptopy i komputery</p>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
+                    <li><a class="dropdown-item" href="komputery.php">Komputery</a></li>
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
