@@ -88,8 +88,8 @@
     <!-- BOTTOM NAVBAR -->
     <div class="container">
         <div class="slider-wrapper overflow-hidden d-flex py-3 px-4">
-            <div class="categories_shadow">
-                <button type="button" class="some_shit btn" data-bs-toggle="dropdown">
+            <div class="category-container">
+                <button type="button" class="btn" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-computer"></i>
                     <p>Laptopy i komputery</p>
                 </button>
@@ -99,7 +99,7 @@
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="category-container">
                 <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     <p>Smartfony i Smartwatche</p>
@@ -110,7 +110,7 @@
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="category-container">
                 <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-microchip"></i>
                     <p>Podzespoły komputerowe</p>
@@ -121,7 +121,7 @@
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="category-container">
                 <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-print"></i>
                     <p>Urządzenia peryferyjne</p>
@@ -132,7 +132,7 @@
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="category-container">
                 <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-tv"></i>
                     <p>TV i audio</p>
@@ -143,7 +143,7 @@
                     <li><a class="dropdown-item" href="#">Link1</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="category-container">
                 <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-keyboard"></i>
                     <p>Akcesoria</p>

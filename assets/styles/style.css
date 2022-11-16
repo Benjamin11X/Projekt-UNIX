@@ -11,6 +11,8 @@
   font-size: 0.8rem;
 }
 
-.categories_shadow {
-  box-shadow: 0px 0px 22px -4px rgb(0, 0, 0);
+.category-container {
+  border: 2px solid black;
+  width: 8rem;
+  height: 4rem;
 }/*# sourceMappingURL=style.css.map */
