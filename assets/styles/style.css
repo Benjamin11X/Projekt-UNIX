@@ -1,0 +1,16 @@
+.navbar_image {
+  width: auto;
+  height: 2.75rem;
+}
+
+.navbar-icon {
+  font-size: 1.75rem;
+}
+
+.navbar-label {
+  font-size: 0.8rem;
+}
+
+.categories_shadow {
+  box-shadow: 0px 0px 22px -4px rgb(0, 0, 0);
+}/*# sourceMappingURL=style.css.map */
