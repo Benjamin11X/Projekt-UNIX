@@ -95,9 +95,8 @@
                         <p class="mb-0">Laptopy i komputery</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="komputery.php">Komputery</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=komputery">Komputery</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=laptopy">Laptopy</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
@@ -106,9 +105,9 @@
                         <p class="mb-0">Smartfony i Smartwatche</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=smartfony">Smartfony</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=smartwatche">Smartwatche</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=komorki">Telefony komórkowe</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
@@ -117,9 +116,14 @@
                         <p class="mb-0">Podzespoły komputerowe</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=cpu">Procesory</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=gpu">Karty Graficzne</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=ram">Pamięć RAM</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=mobo">Płyty główne</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=storage">Dyski</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=case">Obudowy</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=cooling">Chłodzenie</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=ps">Zasilacze</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
