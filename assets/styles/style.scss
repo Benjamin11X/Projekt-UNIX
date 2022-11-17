@@ -31,3 +31,12 @@
     transform: scale(1.05);
 }
 
+//===== LOGIN FORM ===== //
+.login-form-container{
+    height: 100vh;
+
+    &__logo{
+        width: 10rem;
+        height: auto;
+    }
+}

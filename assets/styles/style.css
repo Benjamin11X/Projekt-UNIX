@@ -39,4 +39,12 @@
       -ms-transform: scale(1.05);
        -o-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.login-form-container {
+  height: 100vh;
+}
+.login-form-container__logo {
+  width: 10rem;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */

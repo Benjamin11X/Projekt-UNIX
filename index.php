@@ -54,7 +54,7 @@
                                 <i class="fa-solid fa-user navbar-icon"></i>
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown0" role="button" data-bs-toggle="dropdown" aria-expanded="false">Twoje konto</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown0">
-                                    <li><a class="dropdown-item" href="#">Zaloguj się</a></li>
+                                    <li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
                                     <li><a class="dropdown-item" href="#">Zarejestruj się</a></li>
                                     <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
                                 </ul>
@@ -132,9 +132,9 @@
                         <p class="mb-0">Urządzenia peryferyjne</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Drukarki</a></li>
+                        <li><a class="dropdown-item" href="#">Monitory</a></li>
+                        <li><a class="dropdown-item" href="#">Mikrofony</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
@@ -143,9 +143,8 @@
                         <p class="mb-0">TV i audio</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Telewizory</a></li>
+                        <li><a class="dropdown-item" href="#">Głośniki</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
@@ -154,9 +153,9 @@
                         <p class="mb-0">Akcesoria</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
-                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Klawiatury</a></li>
+                        <li><a class="dropdown-item" href="#">Myszki</a></li>
+                        <li><a class="dropdown-item" href="#">Słuchawki</a></li>
                     </ul>
                 </div>
             </div>
@@ -251,5 +250,6 @@
             
         </div>
     </div>
+    <script str="asste"></script>
 </body>
 </html>
