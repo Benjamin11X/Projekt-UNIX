@@ -86,75 +86,83 @@
     </nav>  
 
     <!-- BOTTOM NAVBAR -->
-    <div class="container">
-        <div class="slider-wrapper overflow-hidden d-flex py-3 px-4">
-            <div class="category-container">
-                <button type="button" class="btn" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-computer"></i>
-                    <p>Laptopy i komputery</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="komputery.php">Komputery</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
-            </div>
-            <div class="category-container">
-                <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p>Smartfony i Smartwatche</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
-            </div>
-            <div class="category-container">
-                <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-microchip"></i>
-                    <p>Podzespoły komputerowe</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
-            </div>
-            <div class="category-container">
-                <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-print"></i>
-                    <p>Urządzenia peryferyjne</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
-            </div>
-            <div class="category-container">
-                <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-tv"></i>
-                    <p>TV i audio</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
-            </div>
-            <div class="category-container">
-                <button type="button" class="btn some_shit" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-keyboard"></i>
-                    <p>Akcesoria</p>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                    <li><a class="dropdown-item" href="#">Link1</a></li>
-                </ul>
+    <div class="container-fluid d-flex">
+        <div class="container">
+            <div class="slider-wrapper overflow-hidden d-flex justify-content-xxl-evenly py-3" id="slider-wrapper">
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-computer fs-4"></i>
+                        <p class="mb-0">Laptopy i komputery</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="komputery.php">Komputery</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-mobile-screen-button fs-4"></i>
+                        <p class="mb-0">Smartfony i Smartwatche</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-microchip fs-4"></i>
+                        <p class="mb-0">Podzespoły komputerowe</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-print fs-4"></i>
+                        <p class="mb-0">Urządzenia peryferyjne</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-tv fs-4"></i>
+                        <p class="mb-0">TV i audio</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
+                <div class="category-container">
+                    <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-keyboard fs-4"></i>
+                        <p class="mb-0">Akcesoria</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                        <li><a class="dropdown-item" href="#">Link1</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <button>
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
     </div>
 
     <!-- BANNER SLIDER -->
