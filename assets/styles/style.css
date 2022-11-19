@@ -41,8 +41,26 @@
           transform: scale(1.05);
 }
 
+.register-form-container {
+  min-height: 100vh;
+}
+.register-form-container__logo {
+  width: 10rem;
+  height: auto;
+}
+.register-form-container__content__form {
+  width: 45%;
+}
+.register-form-container__content__vl {
+  width: 2px;
+  background-color: #c6c7c8;
+}
+.register-form-container__content__info {
+  width: 45%;
+}
+
 .login-form-container {
-  height: 100vh;
+  min-height: 100vh;
 }
 .login-form-container__logo {
   width: 10rem;
@@ -50,6 +68,7 @@
 }
 .login-form-container__content__form {
   width: 45%;
+  min-height: auto;
 }
 .login-form-container__content__vl {
   width: 2px;
@@ -57,4 +76,55 @@
 }
 .login-form-container__content__info {
   width: 45%;
+}
+
+@media (max-width: 768px) {
+  .register-form-container__logo {
+    padding-top: 1rem;
+    width: 10rem;
+    height: auto;
+  }
+  .register-form-container__content__form {
+    width: 100%;
+  }
+  .register-form-container__content__vl {
+    width: 2px;
+    background-color: #c6c7c8;
+  }
+  .register-form-container__content__info {
+    width: 100%;
+  }
+  .register-form-container__content__info h2 {
+    text-align: center;
+  }
+  .register-form-container__content__info-row {
+    padding: 1rem 0;
+  }
+  .register-form-container__content__info-row p {
+    text-align: center;
+  }
+  .login-form-container__logo {
+    padding-top: 1rem;
+    width: 10rem;
+    height: auto;
+  }
+  .login-form-container__content__form {
+    width: 100%;
+  }
+  .login-form-container__content__vl {
+    width: 2px;
+    background-color: #c6c7c8;
+  }
+  .login-form-container__content__info {
+    width: 100%;
+  }
+  .login-form-container__content__info h2 {
+    text-align: center;
+  }
+  .login-form-container__content__info-row {
+    padding: 1rem 0;
+  }
+  .login-form-container__content__info-row p {
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */

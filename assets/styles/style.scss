@@ -31,9 +31,9 @@
     transform: scale(1.05);
 }
 
-//===== LOGIN FORM ===== //
-.login-form-container{
-    height: 100vh;
+//===== REGISTER FORM ===== //
+.register-form-container{
+    min-height: 100vh;
 
     &__logo{
         width: 10rem;
@@ -50,6 +50,100 @@
         }
         &__info{
             width: 45%;
+        }
+    }
+}
+
+// ===== LOGIN FORM ===== //
+.login-form-container{
+    min-height: 100vh;
+
+    &__logo{
+        width: 10rem;
+        height: auto;
+    }
+
+    &__content{
+        &__form{
+            width: 45%;
+            min-height: auto;
+        }
+        &__vl{
+            width: 2px;
+            background-color: #c6c7c8;
+        }
+        &__info{
+            width: 45%;
+        }
+    }
+}
+ 
+@media (max-width: 768px){
+    //===== REGISTER FORM =====//
+    .register-form-container{
+        &__logo{
+            padding-top: 1rem;
+            width: 10rem;
+            height: auto;
+        }
+    
+        &__content{
+            &__form{
+                width: 100%;
+            }
+            &__vl{
+                width: 2px;
+                background-color: #c6c7c8;
+            }
+            &__info{
+                width: 100%;
+
+                h2{
+                    text-align: center;
+                }
+
+                &-row{
+                    padding: 1rem 0;
+
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== LOGIN FORM ===== //
+    .login-form-container{
+        &__logo{
+            padding-top: 1rem;
+            width: 10rem;
+            height: auto;
+        }
+    
+        &__content{
+            &__form{
+                width: 100%;
+            }
+            &__vl{
+                width: 2px;
+                background-color: #c6c7c8;
+            }
+            &__info{
+                width: 100%;
+
+                h2{
+                    text-align: center;
+                }
+
+                &-row{
+                    padding: 1rem 0;
+
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
 }

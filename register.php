@@ -18,11 +18,11 @@
     <title>UNIX - Zarejestruj się</title>
 </head>
 <body>
-    <div class="login-form-container container d-flex flex-column justify-content-center align-items-center">
-        <img class="login-form-container__logo" src="assets/images/Logo.svg" alt="">
+    <div class="register-form-container container-md d-flex flex-column justify-content-center align-items-center">
+        <img class="register-form-container__logo" src="assets/images/Logo.svg" alt="">
         <hr class="bg-danger border-2 border-top border-dark w-100">
-        <div class="login-form-container__content container d-flex justify-content-between">
-            <div class="login-form-container__content__form w-50">
+        <div class="register-form-container__content container-fluid d-flex flex-column-reverse flex-md-row justify-content-between">
+            <div class="register-form-container__content__form">
                 <h1>Załóż konto</h1>
                 <form action="" method="post">
                     <div class="mb-3">
@@ -53,24 +53,24 @@
                     </div>
                 </form>
             </div>
-            <div class="login-form-container__content__vl"></div>
-            <div class="login-form-container__content__info ">
+            <div class="register-form-container__content__vl"></div>
+            <div class="register-form-container__content__info">
                 <h2 class="h-25">Dzięki założeniu konta możesz wykonywać zakupy w naszym sklepie dużo łatwiej</h2>
                 <div class="d-flex flex-column justify-content-evenly h-75">
-                    <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-signs-post display-5 me-3"></i>
+                    <div class="register-form-container__content__info-row d-flex flex-column flex-md-row align-items-center">
+                        <i class="fa-solid fa-signs-post display-5 me-md-3"></i>
                         <p class="fs-5 m-0">Zamawiaj szybciej i łatwiej</p>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fa-regular fa-clipboard display-5 me-4 pe-1"></i>
+                    <div class="register-form-container__content__info-row d-flex flex-column flex-md-row align-items-center">
+                        <i class="fa-regular fa-clipboard display-5 me-md-4 pe-md-1"></i>
                         <p class="fs-5 m-0">Sprawdzaj swoją historie zamówień</p>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-magnifying-glass display-5 me-3"></i>
+                    <div class="register-form-container__content__info-row d-flex flex-column flex-md-row align-items-center">
+                        <i class="fa-solid fa-magnifying-glass display-5 me-md-3"></i>
                         <p class="fs-5 m-0">Śledź status przesyłki</p>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-coins display-5 me-3"></i>
+                    <div class="register-form-container__content__info-row d-flex flex-column flex-md-row align-items-center">
+                        <i class="fa-solid fa-coins display-5 me-md-3"></i>
                         <p class="fs-5 m-0">Korzystaj z rabatów, promocji, oraz ofert specjalnych</p>
                     </div>
                 </div>
