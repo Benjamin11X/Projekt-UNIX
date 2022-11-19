@@ -47,4 +47,14 @@
 .login-form-container__logo {
   width: 10rem;
   height: auto;
+}
+.login-form-container__content__form {
+  width: 45%;
+}
+.login-form-container__content__vl {
+  width: 2px;
+  background-color: #c6c7c8;
+}
+.login-form-container__content__info {
+  width: 45%;
 }/*# sourceMappingURL=style.css.map */

@@ -55,7 +55,7 @@
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown0" role="button" data-bs-toggle="dropdown" aria-expanded="false">Twoje konto</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown0">
                                     <li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
-                                    <li><a class="dropdown-item" href="#">Zarejestruj się</a></li>
+                                    <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>
                                     <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
                                 </ul>
                             </li>
