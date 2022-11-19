@@ -78,6 +78,31 @@
   width: 45%;
 }
 
+.kontakt__info__card {
+  width: 17rem;
+  height: 13rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.kontakt__info__card div {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+}
+.kontakt__form {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+
 @media (max-width: 768px) {
   .register-form-container__logo {
     padding-top: 1rem;
