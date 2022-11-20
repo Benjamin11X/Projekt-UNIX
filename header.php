@@ -94,6 +94,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="produkty.php?kategoria=smartfony">Smartfony</a></li>
                         <li><a class="dropdown-item" href="produkty.php?kategoria=smartwatche">Smartwatche</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=tablety">Tablety</a></li>
                         <li><a class="dropdown-item" href="produkty.php?kategoria=komorki">Telefony komórkowe</a></li>
                     </ul>
                 </div>

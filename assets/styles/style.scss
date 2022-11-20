@@ -1,3 +1,7 @@
+.bg-gray{
+    background-color: #f8f9fa;
+}
+
 .navbar_image{
     width: auto;
     height: 2.75rem;
@@ -74,6 +78,27 @@
         }
         &__info{
             width: 45%;
+        }
+    }
+}
+
+// ===== FOOTER ===== //
+.footer{
+    &__newsletter{
+        &--tab{
+            border-radius: 10px;
+
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+
+    &__links{
+        &--category{
+            width: 12rem;
+            a{
+                text-decoration: none;
+                color: #212529;
+            }
         }
     }
 }

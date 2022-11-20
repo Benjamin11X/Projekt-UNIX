@@ -1,3 +1,7 @@
+.bg-gray {
+  background-color: #f8f9fa;
+}
+
 .navbar_image {
   width: auto;
   height: 2.75rem;
@@ -76,6 +80,22 @@
 }
 .login-form-container__content__info {
   width: 45%;
+}
+
+.footer__newsletter--tab {
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.footer__links--category {
+  width: 12rem;
+}
+.footer__links--category a {
+  text-decoration: none;
+  color: #212529;
 }
 
 .kontakt__info__card {
