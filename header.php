@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 
 
 <!-- === NAVBAR === -->
@@ -39,9 +37,19 @@
                                 <i class="fa-solid fa-user navbar-icon"></i>
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown0" role="button" data-bs-toggle="dropdown" aria-expanded="false">Twoje konto</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown0">
-                                    <li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
-                                    <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>
+                                    <!--<li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
+                                    <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>-->
                                     <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
+                                    <?php
+                                     if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                                        echo '<li><a class="dropdown-item" href="login.php">Zaloguj sie</a></li>
+                                                <li><a class="dropdown-item" href="register.php">Zamówienia</a></li>';
+                                    }
+                                    else {
+                                        echo '<li><a class="dropdown-item" href="login.php">Twoje konto</a></li>
+                                        <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>';
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li class="nav-item d-flex flex-column align-items-center justify-content-between">
@@ -53,6 +61,7 @@
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koszyk</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
                                     <!-- PHP JEŻELI KOSZYK PUSTY WYŚWIETL "KOSZYK PUSTY" JEŻELI COŚ JEST WYŚWIETL PRODUKTY -->
+                                   
                                 </ul>
                             </li>
                             <li class="nav-item dropdown d-flex flex-column align-items-center justify-content-between">
@@ -67,7 +76,8 @@
                                     <li><span class="dropdown-item-text">505404303</span></li>
                                     <li><span class="dropdown-item-text">Pon. - Pt. 10:00 - 18:00</span></li>
                                     <li><span class="dropdown-item-text">Sb. - Nd. 12:00 - 16:00</span></li>
-                                    <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
+                                    
+                                   
                                 </ul>
                             </li>
                         </ul>
