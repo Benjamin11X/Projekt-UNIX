@@ -82,15 +82,26 @@
     }
 }
 
-// ===== FOOTER ===== //
-.footer{
-    &__newsletter{
-        &--tab{
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.newsletter{
+    &--tab{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        &-text{
+            p{
+               
+            }
+        }
+        &-icon{
+            
         }
     }
+}
 
+// ===== FOOTER ===== //
+.footer{
     &__links{
         &--category{
             width: 12rem;

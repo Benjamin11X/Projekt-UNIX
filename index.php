@@ -105,13 +105,13 @@
         </div>
     </div>
 
-    <div class="newsletter w-100">
+    <div class="newsletter container-lg my-5  w-100">
         <div class="newsletter--tab d-flex">
             <div class="newsletter--tab-text">
-                <p>Newsletter</p>
+                <h1>Newsletter</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, a.</p>
                 <form action="" method="post">
-                    <input type="text">
+                    <input type="text" placeholder="Twój e-mail">
                 </form>
             </div>
             <div class="footer__newsletter--tab-icon">
