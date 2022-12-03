@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,20 +45,23 @@
     </div>
 
     <!-- BESTSELLERS -->
-    <div class="container">
+    <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
-        <div class="d-flex justify-content-between">
+        <div class="showcase__text d-flex justify-content-between">
             <h1>Bestsellery</h1>
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="">
-        </div>
+        <div class="showcase__products overflow-hidden d-flex">
+            <div class="showcase__products--product">
+                
+            </div>
+        </div>  
         
     </div>
 
     <!-- PROMOTIONS -->
-    <div class="container">
+    <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
         <div class="d-flex justify-content-between">
             <h1>Promocje</h1>
@@ -67,7 +74,7 @@
     </div>
 
     <!-- SUGGESTED -->
-    <div class="container">
+    <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
         <div class="d-flex justify-content-between">
             <h1>Polecamy</h1>
@@ -79,8 +86,8 @@
         </div>
     </div>
 
-    <!-- SUGGESTED -->
-    <div class="container">
+    <!-- NEWS -->
+    <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
         <div class="d-flex justify-content-between">
             <h1>Aktualności</h1>
@@ -92,8 +99,8 @@
         </div>
     </div>
 
-    <!-- SUGGESTED -->
-    <div class="container">
+    <!-- TUTORIALS -->
+    <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
         <div class="d-flex justify-content-between">
             <h1>Poradniki</h1>
@@ -105,13 +112,13 @@
         </div>
     </div>
 
-    <div class="newsletter w-100">
+    <div class="newsletter container-lg my-5  w-100">
         <div class="newsletter--tab d-flex">
             <div class="newsletter--tab-text">
-                <p>Newsletter</p>
+                <h1>Newsletter</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, a.</p>
                 <form action="" method="post">
-                    <input type="text">
+                    <input type="text" placeholder="Twój e-mail">
                 </form>
             </div>
             <div class="footer__newsletter--tab-icon">
