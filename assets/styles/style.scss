@@ -195,3 +195,17 @@
         }
     }
 }
+
+a{
+    text-decoration: none;
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
