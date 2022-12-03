@@ -25,24 +25,13 @@
 }
 
 .category-button-shadow {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .category-button-shadow:focus {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  -webkit-transition: 100ms;
-  -o-transition: 100ms;
-  -moz-transition: 100ms;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 100ms;
-  -webkit-transform: scale(1.05);
-     -moz-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-       -o-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .register-form-container {
@@ -83,12 +72,8 @@
 }
 
 .footer__newsletter--tab {
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .footer__links--category {
   width: 12rem;
@@ -101,26 +86,16 @@
 .kontakt__info__card {
   width: 17rem;
   height: 13rem;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
 }
 .kontakt__info__card div {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px;
 }
 .kontakt__form {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
@@ -172,10 +147,8 @@
   .login-form-container__content__info-row p {
     text-align: center;
   }
-  
-}/*# sourceMappingURL=style.css.map */
-
-a{
+}
+a {
   text-decoration: none;
   margin: 0;
   margin-top: auto;
@@ -187,5 +160,4 @@ a{
   color: #212529;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-}
-
+}/*# sourceMappingURL=style.css.map */
