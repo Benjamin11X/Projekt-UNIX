@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!-- === NAVBAR === -->
 
     <!-- TOP NAVBAR -->
