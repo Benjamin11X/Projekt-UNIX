@@ -6,6 +6,8 @@
 
     $discounts_sql = "SELECT name, discount, picture_url FROM product WHERE discount!=0 LIMIT 5";
     $discounts_result = $connection->query($discounts_sql);
+
+   
 ?>
 
 <!DOCTYPE html>
