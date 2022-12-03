@@ -104,23 +104,24 @@
             
         </div>
     </div>
+
+    <div class="newsletter w-100">
+        <div class="newsletter--tab d-flex">
+            <div class="newsletter--tab-text">
+                <p>Newsletter</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, a.</p>
+                <form action="" method="post">
+                    <input type="text">
+                </form>
+            </div>
+            <div class="footer__newsletter--tab-icon">
+                <i class="fa-solid fa-envelope-open-text display-1"></i>
+            </div>
+        </div>
+    </div>
     
     <footer class="container-fluid bg-gray">
         <div class="footer container">
-            <div class="footer__newsletter w-100">
-                <div class="footer__newsletter--tab d-flex">
-                    <div class="footer__newsletter--tab-text">
-                        <p>Newsletter</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, a.</p>
-                        <form action="" method="post">
-                            <input type="text">
-                        </form>
-                    </div>
-                    <div class="footer__newsletter--tab-icon">
-                        <i class="fa-solid fa-envelope-open-text display-1"></i>
-                    </div>
-                </div>
-            </div>
 
             <div class="footer__links d-flex flex-wrap justify-content-evenly">
                 <div class="footer__links--category d-flex flex-column m-4">
