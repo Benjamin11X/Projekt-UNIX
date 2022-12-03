@@ -45,6 +45,21 @@
           transform: scale(1.05);
 }
 
+.showcase__products--product {
+  height: 450px;
+  width: 300px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.showcase__products--product-img {
+  width: 280px;
+  height: 340px;
+}
+.showcase__products--product-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
 .register-form-container {
   min-height: 100vh;
 }

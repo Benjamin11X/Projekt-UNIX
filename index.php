@@ -1,5 +1,11 @@
 <?php
     session_start();
+    include 'connect.php';
+    $bestsellers_sql = "SELECT name, price, picture_url FROM product ORDER BY sales DESC LIMIT 5";
+    $bestsellers_result = $connection->query($bestsellers_sql);
+
+    $discounts_sql = "SELECT name, discount, picture_url FROM product WHERE discount!=0 LIMIT 5";
+    $discounts_result = $connection->query($discounts_sql);
 ?>
 
 <!DOCTYPE html>
@@ -53,9 +59,20 @@
         </div>
         <!-- PRODUCTS -->
         <div class="showcase__products overflow-hidden d-flex">
-            <div class="showcase__products--product">
-                
-            </div>
+            
+                <?php 
+                    while($row = $bestsellers_result->fetch_assoc()){
+                        echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
+                            echo '<div class="showcase__products--product-img">';
+                                echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
+                            echo '</div>';
+                            echo '<div class="showcase__products--product-text">';
+                                echo '<h4>' . $row['name'] . '</h4>';
+                                echo '<p>' . $row['price'] . 'zł</p>';
+                            echo '</div>';
+                        echo '</div>';
+                    }
+                ?>
         </div>  
         
     </div>
@@ -68,9 +85,21 @@
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="">
-            
-        </div>
+        <div class="showcase__products overflow-hidden d-flex">
+                <?php 
+                    while($row = $discounts_result->fetch_assoc()){
+                        echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
+                            echo '<div class="showcase__products--product-img">';
+                                echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
+                            echo '</div>';
+                            echo '<div class="showcase__products--product-text">';
+                                echo '<h4>' . $row['name'] . '</h4>';
+                                echo '<p>' . $row['discount'] . 'zł</p>';
+                            echo '</div>';
+                        echo '</div>';
+                    }
+                ?>
+        </div>  
     </div>
 
     <!-- SUGGESTED -->

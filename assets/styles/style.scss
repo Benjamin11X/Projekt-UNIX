@@ -35,6 +35,33 @@
     transform: scale(1.05);
 }
 
+//===== INDEX - PRODUCTS =====//
+.showcase{
+    &__text{
+
+    }
+    &__products{
+        &--product{
+            height: 450px;
+            width: 300px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            
+
+            &-img{
+                width: 280px;
+                height: 340px;
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            &-text{
+
+            }
+        }
+    }
+}
+
 //===== REGISTER FORM ===== //
 .register-form-container{
     min-height: 100vh;
