@@ -24,21 +24,22 @@
         <div class="login-form-container__content container-fluid d-flex flex-column flex-md-row justify-content-between">
             <div class="login-form-container__content__form">
                 <h1>Zaloguj się</h1>
-                <form action="" method="post">
+                <form action="zaloguj.php" method="post">
                     <div class="mb-3">
-                        <label for="nickname">Nazwa użytkownika *</label>
-                        <input class="form-control" type="text" name="nickname" id="nickname" required="required" data-error="Nazwa użytkownika jest wymagana">
+                        <label for="login">Nazwa użytkownika *</label>
+                        <input class="form-control" type="text" name="login" id="login" required="required" data-error="Nazwa użytkownika jest wymagana">
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="mb-3">
                         <label for="password">Hasło *</label>
-                        <input class="form-control" type="text" name="password" id="password" required="required" data-error="Hasło jest wymagane">
+                        <input class="form-control" type="password" name="password" id="password" required="required" data-error="Hasło jest wymagane">
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="mb-3">
                         <input class="btn btn-outline-dark" type="submit" value="Zaloguj się"></input>
                     </div>
                 </form>
+
             </div>
             <div class="login-form-container__content__vl"></div>
             <div class="login-form-container__content__info">
