@@ -1,15 +1,66 @@
 <?php
     if(isset($_POST['submit'])){
-        /*
-        $kategorie = array("komputery_laptopy","smartfony_smartwatche","podzespoly_komputerowe",
-        "urzadzenia_peryferyjne","tv_audio","akcesoria");
-        $subkategorie = array("komputery","laptopy","smartfony","smartwatche","tablety",
-        "komorkowe","procesory","karty_graficzne","pamiec_ram","plyty_glowne","dyski",
-        "obudowy","chlodzenie","zasilacze","drukarki","monitory","mikrofony","telewizory","audio","klawiatury","myszki","sluchawki");
-        */
-        if((isset($_REQUEST['komputery_laptopy']))){
-            echo "JEST";
+        $kategorie_subkategorie = array(
+            array("komputery","laptopy"),
+            array("smartfony","smartwatche","tablety","komorkowe"),
+            array("procesory","karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy","chlodzenie","zasilacze"),
+            array("drukarki","monitory","mikrofony"),
+            array("telewizory","audio"),
+            array("klawiatury","myszki","sluchawki")
+        );
+
+        $searchProducts_sql = "";
+        $filtrs = array();
+        for($i = 0; $i<6; $i++){
+            if($i == 0){
+                if(isset($_POST['komputery_laptopy'])){
+                    array_push($filtrs, "1");
+                    continue;
+                }
+            }
+            if($i == 1){
+                if(isset($_POST['smartfony_smartwatche'])){
+                    echo "smartfony_smartwatche <br>";
+                    array_push($filtrs, "2");
+                    continue;
+                }
+            }
+            if($i == 2){
+                if(isset($_POST['podzespoly_komputerowe'])){
+                    echo "podzespoly_komputerowe <br>";
+                    array_push($filtrs, "3");
+                    continue;
+                }
+            }
+            if($i == 3){
+                if(isset($_POST['urzadzenia_peryferyjne'])){
+                    echo "urzadzenia_peryferyjne <br>";
+                    array_push($filtrs, "4");
+                    continue;
+                }
+            }
+            if($i == 4){
+                if(isset($_POST['tv_audio'])){
+                    echo "tv_audio <br>";
+                    array_push($filtrs, "5");
+                    continue;
+                }
+            }
+            if($i == 5){
+                if(isset($_POST['akcesoria'])){
+                    echo "akcesoria <br>";
+                    array_push($filtrs, "6");
+                    continue;
+                }
+            }
+            for($j = 0; $j < count($kategorie_subkategorie[$i]); $j++){
+                if(isset($_POST[$kategorie_subkategorie[$i][$j]])){
+                    array_push($filtrs, $kategorie_subkategorie[$i][$j]);
+                }
+            }
         }
+
+        // TU BĘDZIE SKLEJANY STRING W JEDNĄ KOMENDE SQL
     }
 ?>
 
@@ -179,7 +230,7 @@
                     </ul>
                 </li>
             </ul>
-            <input type="submit" value="Filtruj" class="btn btn-dark">
+            <input type="submit" name="submit" value="Filtruj" class="btn btn-dark">
         </form>
         </div>
             <div class="col-8 p-0">
