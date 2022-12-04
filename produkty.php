@@ -1,3 +1,18 @@
+<?php
+    if(isset($_POST['submit'])){
+        /*
+        $kategorie = array("komputery_laptopy","smartfony_smartwatche","podzespoly_komputerowe",
+        "urzadzenia_peryferyjne","tv_audio","akcesoria");
+        $subkategorie = array("komputery","laptopy","smartfony","smartwatche","tablety",
+        "komorkowe","procesory","karty_graficzne","pamiec_ram","plyty_glowne","dyski",
+        "obudowy","chlodzenie","zasilacze","drukarki","monitory","mikrofony","telewizory","audio","klawiatury","myszki","sluchawki");
+        */
+        if((isset($_REQUEST['komputery_laptopy']))){
+            echo "JEST";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +38,22 @@
     <?php
         include 'header.php';
     ?>
+    <!-- FILTR BAR -->
     <div class="container-fluid">
-        <form class="filtr" method="post">
+        <div class="row my-4">
+            <div class="col-2">
+            <form class="filtr" method="post">
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="komputery_laptopy">
+                    <input type="checkbox" class="form-check-input" name="komputery_laptopy" value="1" id="komputery_laptopy">
                     <label for="komputery_laptopy">Komputery i laptopy</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="komputery">
+                            <input type="checkbox" class="form-check-input" name="komputery" value="komputery" id="komputery">
                             <label for="komputery">Komputery</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="laptopy">
+                            <input type="checkbox" class="form-check-input" name="laptopy" value="laptopy" id="laptopy">
                             <label for="laptopy">Laptopy</label>
                         </li>
                     </ul>
@@ -43,63 +61,63 @@
             </ul>
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="smartfony_smartwatche">
+                    <input type="checkbox" class="form-check-input" name="smartfony_smartwatche" value="2" id="smartfony_smartwatche">
                     <label for="smartfony_smartwatche">Smartfony i smartwatche</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="smartfony">
+                            <input type="checkbox" class="form-check-input" name="smartfony" value="smartfony" id="smartfony">
                             <label for="smartfony">Smartfony</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="smartwatche">
+                            <input type="checkbox" class="form-check-input" name="smartwatche" value="smartwatche" id="smartwatche">
                             <label for="smartwatche">Smartwatche</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="tablety">
+                            <input type="checkbox" class="form-check-input" name="tablety" value="tablety" id="tablety">
                             <label for="tablety">Tablety</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="komórkowe">
-                            <label for="komórkowe">Komórkowe</label>
+                            <input type="checkbox" class="form-check-input" name="komorkowe" value="komorkowe" id="komorkowe">
+                            <label for="komorkowe">Komórkowe</label>
                         </li>
                     </ul>
                 </li>
             </ul>
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="podzespoly_komputerowe">
+                    <input type="checkbox" class="form-check-input" name="podzespoly_komputerowe" value="3" id="podzespoly_komputerowe">
                     <label for="podzespoly_komputerowe">Podzespoły komputerowe</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="procesory">
+                            <input type="checkbox" class="form-check-input" name="procesory" value="procesory" id="procesory">
                             <label for="procesory">Procesory</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="karty_graficzne">
+                            <input type="checkbox" class="form-check-input" name="karty_graficzne" value="karty_graficzne" id="karty_graficzne">
                             <label for="karty_graficzne">Karty Graficzne</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="pamiec_ram">
+                            <input type="checkbox" class="form-check-input" name="pamiec_ram" value="pamiec_ram" id="pamiec_ram">
                             <label for="pamiec_ram">Pamięć RAM</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="plyty_glowne">
+                            <input type="checkbox" class="form-check-input" name="plyty_glowne" value="plyty_glowne" id="plyty_glowne">
                             <label for="plyty_glowne">Płyty Główne</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="dyski">
+                            <input type="checkbox" class="form-check-input" name="dyski" value="dyski" id="dyski">
                             <label for="dyski">Dyski</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="obudowy">
+                            <input type="checkbox" class="form-check-input" name="obudowy" value="obudowy" id="obudowy">
                             <label for="obudowy">Obudowy</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="chlodzenie">
+                            <input type="checkbox" class="form-check-input" name="chlodzenie" value="chlodzenie" id="chlodzenie">
                             <label for="chlodzenie">Chłodzenie</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="zasilacze">
+                            <input type="checkbox" class="form-check-input" name="zasilacze" value="zasilacze" id="zasilacze">
                             <label for="zasilacze">Zasilacze</label>
                         </li>
                     </ul>
@@ -107,19 +125,19 @@
             </ul>
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="urzadzenia_peryferyjne">
+                    <input type="checkbox" class="form-check-input" name="urzadzenia_peryferyjne" value="4" id="urzadzenia_peryferyjne">
                     <label for="urzadzenia_peryferyjne">Urządzenia peryferyjne</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="drukarki">
+                            <input type="checkbox" class="form-check-input" name="drukarki" value="drukarki" id="drukarki">
                             <label for="drukarki">Drukarki</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="monitory">
+                            <input type="checkbox" class="form-check-input" name="monitory" value="monitory" id="monitory">
                             <label for="monitory">Monitory</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="mikrofony">
+                            <input type="checkbox" class="form-check-input" name="mikrofony" value="mikrofony" id="mikrofony">
                             <label for="mikrofony">Mikrofony</label>
                         </li>
                     </ul>
@@ -127,15 +145,15 @@
             </ul>
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="tv_audio">
-                    <label for="tv_audio">Urządzenia peryferyjne</label>
+                    <input type="checkbox" class="form-check-input" name="tv_audio" value="5" id="tv_audio">
+                    <label for="tv_audio">TV i Audio</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="telewizory">
+                            <input type="checkbox" class="form-check-input" name="telewizory" value="telewizory" id="telewizory">
                             <label for="telewizory">Telewizory</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="audio">
+                            <input type="checkbox" class="form-check-input" name="audio" value="audio" id="audio">
                             <label for="audio">Audio</label>
                         </li>
                     </ul>
@@ -143,19 +161,19 @@
             </ul>
             <ul class="filtr__kategoria mb-1">
                 <li>
-                    <input type="checkbox" class="form-check-input" id="akcesoria">
-                    <label for="akcesoria">Urządzenia peryferyjne</label>
+                    <input type="checkbox" class="form-check-input" name="akcesoria" value="6" id="akcesoria">
+                    <label for="akcesoria">Akcesoria</label>
                     <ul class="filtr__kategoria--expandList">
                         <li>
-                            <input type="checkbox" class="form-check-input" id="klawiatury">
+                            <input type="checkbox" class="form-check-input" name="klawiatury" value="klawiatury" id="klawiatury">
                             <label for="klawiatury">Klawiatury</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="myszki">
+                            <input type="checkbox" class="form-check-input" name="myszki" value="myszki" id="myszki">
                             <label for="myszki">Myszki</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="form-check-input" id="sluchawki">
+                            <input type="checkbox" class="form-check-input" name="myszki" value="myszki" id="sluchawki">
                             <label for="sluchawki">Słuchawki</label>
                         </li>
                     </ul>
@@ -163,9 +181,27 @@
             </ul>
             <input type="submit" value="Filtruj" class="btn btn-dark">
         </form>
-        <div class="container">
-
         </div>
+            <div class="col-8 p-0">
+            <!-- WYŚWIETLENIE PRODUKTÓW -->
+            <div class="container-fluid produkty d-flex flex-wrap w-100 p-0">
+                <div class="produkty__kartaProduktu d-flex flex-column align-items-center justify-content-between">
+                    <div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">
+                        <img src="assets/images/KartyGraficzne/1/1.webp" alt="">
+                    </div>
+                    <div class="produkty__kartaProduktu--text w-100">
+                        <a href="#">Lorem ipsum</a>
+                        <p>100zł</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+        
+        
     </div>
     
 </body>

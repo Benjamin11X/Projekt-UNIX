@@ -1,239 +1,254 @@
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
 
-.bg-gray{
-    background-color: #f8f9fa;
+.bg-gray {
+  background-color: #f8f9fa;
 }
 
-.navbar_image{
-    width: auto;
-    height: 2.75rem;
+.navbar_image {
+  width: auto;
+  height: 2.75rem;
 }
 
 //=== NAVBAR ===
-.navbar-icon{
-    font-size: 1.75rem;
+.navbar-icon {
+  font-size: 1.75rem;
 }
 
-.navbar-label{
-    font-size: 0.8rem;
+.navbar-label {
+  font-size: 0.8rem;
 }
 
-.category-container{
-    margin: 0 1rem;
+.category-container {
+  margin: 0 1rem;
 }
 
-.category-button{
-    width: 10rem;
-    height: 5rem;
+.category-button {
+  width: 10rem;
+  height: 5rem;
 }
 
-.category-button-shadow{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.category-button-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.category-button-shadow:focus{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    transition: 100ms;
-    transform: scale(1.05);
+.category-button-shadow:focus {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 100ms;
+  transform: scale(1.05);
 }
 
 //===== INDEX - PRODUCTS =====//
-.showcase{
-    &__text{
+.showcase {
+  &__text {
+  }
+  &__products {
+    &--product {
+      height: 450px;
+      width: 300px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    }
-    &__products{
-        &--product{
-            height: 450px;
-            width: 300px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            
-
-            &-img{
-                width: 280px;
-                height: 340px;
-                img{
-                    
-                    max-width: 100%;
-                    max-height: 100%;
-                }
-            }
-            &-text{
-
-            }
+      &-img {
+        width: 280px;
+        height: 340px;
+        img {
+          max-width: 100%;
+          max-height: 100%;
         }
+      }
+      &-text {
+        
+      }
     }
+  }
+}
+
+// ===== PRODUKTY ===== //
+
+// === PRODUKTY - CONTAINER === //
+.produkty {
+  &__kartaProduktu {
+    width: 300px;
+    height: 400px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    &--image {
+      width: 280px;
+      height: 300px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    &--text {
+    }
+  }
 }
 
 //===== REGISTER FORM ===== //
-.register-form-container{
-    min-height: 100vh;
+.register-form-container {
+  min-height: 100vh;
 
-    &__logo{
-        width: 10rem;
-        height: auto;
-    }
+  &__logo {
+    width: 10rem;
+    height: auto;
+  }
 
-    &__content{
-        &__form{
-            width: 45%;
-        }
-        &__vl{
-            width: 2px;
-            background-color: #c6c7c8;
-        }
-        &__info{
-            width: 45%;
-        }
+  &__content {
+    &__form {
+      width: 45%;
     }
+    &__vl {
+      width: 2px;
+      background-color: #c6c7c8;
+    }
+    &__info {
+      width: 45%;
+    }
+  }
 }
 
 // ===== LOGIN FORM ===== //
-.login-form-container{
-    min-height: 100vh;
+.login-form-container {
+  min-height: 100vh;
 
-    &__logo{
-        width: 10rem;
-        height: auto;
-    }
+  &__logo {
+    width: 10rem;
+    height: auto;
+  }
 
-    &__content{
-        &__form{
-            width: 45%;
-            min-height: auto;
-        }
-        &__vl{
-            width: 2px;
-            background-color: #c6c7c8;
-        }
-        &__info{
-            width: 45%;
-        }
+  &__content {
+    &__form {
+      width: 45%;
+      min-height: auto;
     }
+    &__vl {
+      width: 2px;
+      background-color: #c6c7c8;
+    }
+    &__info {
+      width: 45%;
+    }
+  }
 }
 
-.newsletter{
-    &--tab{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        &-text{
-            p{
-               
-            }
-        }
-        &-icon{
-            
-        }
+.newsletter {
+  &--tab {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &-text {
+      p {
+      }
     }
+    &-icon {
+    }
+  }
 }
 
 // ===== FOOTER ===== //
-.footer{
-    &__links{
-        &--category{
-            width: 12rem;
-            a{
-                text-decoration: none;
-                color: #212529;
-            }
-        }
+.footer {
+  &__links {
+    &--category {
+      width: 12rem;
+      a {
+        text-decoration: none;
+        color: #212529;
+      }
     }
+  }
 }
 
 // ===== KONTAKT ===== //
-.kontakt{
-    &__info{
-        &__card{
-            width: 17rem;
-            height: 13rem;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            border-radius: 5px;
+.kontakt {
+  &__info {
+    &__card {
+      width: 17rem;
+      height: 13rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 5px;
 
-            div{
-                box-sizing: border-box;
-                padding: 10px;
-            }
-        }
+      div {
+        box-sizing: border-box;
+        padding: 10px;
+      }
     }
+  }
 
-    &__form{
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 8px;
-    }
+  &__form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+  }
 }
 
- 
-@media (max-width: 768px){
-    //===== REGISTER FORM =====//
-    .register-form-container{
-        &__logo{
-            padding-top: 1rem;
-            width: 10rem;
-            height: auto;
-        }
-    
-        &__content{
-            &__form{
-                width: 100%;
-            }
-            &__vl{
-                width: 2px;
-                background-color: #c6c7c8;
-            }
-            &__info{
-                width: 100%;
-
-                h2{
-                    text-align: center;
-                }
-
-                &-row{
-                    padding: 1rem 0;
-
-                    p{
-                        text-align: center;
-                    }
-                }
-            }
-        }
+@media (max-width: 768px) {
+  //===== REGISTER FORM =====//
+  .register-form-container {
+    &__logo {
+      padding-top: 1rem;
+      width: 10rem;
+      height: auto;
     }
 
-    // ===== LOGIN FORM ===== //
-    .login-form-container{
-        &__logo{
-            padding-top: 1rem;
-            width: 10rem;
-            height: auto;
+    &__content {
+      &__form {
+        width: 100%;
+      }
+      &__vl {
+        width: 2px;
+        background-color: #c6c7c8;
+      }
+      &__info {
+        width: 100%;
+
+        h2 {
+          text-align: center;
         }
-    
-        &__content{
-            &__form{
-                width: 100%;
-            }
-            &__vl{
-                width: 2px;
-                background-color: #c6c7c8;
-            }
-            &__info{
-                width: 100%;
 
-                h2{
-                    text-align: center;
-                }
+        &-row {
+          padding: 1rem 0;
 
-                &-row{
-                    padding: 1rem 0;
-
-                    p{
-                        text-align: center;
-                    }
-                }
-            }
+          p {
+            text-align: center;
+          }
         }
+      }
     }
+  }
+
+  // ===== LOGIN FORM ===== //
+  .login-form-container {
+    &__logo {
+      padding-top: 1rem;
+      width: 10rem;
+      height: auto;
+    }
+
+    &__content {
+      &__form {
+        width: 100%;
+      }
+      &__vl {
+        width: 2px;
+        background-color: #c6c7c8;
+      }
+      &__info {
+        width: 100%;
+
+        h2 {
+          text-align: center;
+        }
+
+        &-row {
+          padding: 1rem 0;
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
