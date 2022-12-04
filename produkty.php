@@ -206,7 +206,7 @@
                         <!-- WYŚWIETLENIE PRODUKTÓW -->
                         <?php
                         while($row = $searchProducts_result->fetch_assoc()){
-                            echo '<div class="produkty__kartaProduktu d-flex flex-column align-items-center justify-content-between m-2">';
+                            echo '<div class="produkty__kartaProduktu d-flex flex-column align-items-center m-2">';
                                 echo '<div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">';
                                     echo '<img src="' . $row['picture_url'] . '" alt="">';
                                 echo '</div>';
@@ -219,8 +219,6 @@
                         ?>
                     </div>
                 </div>
-            </div>
-            
             </div>
             <div class="col-2">
 
