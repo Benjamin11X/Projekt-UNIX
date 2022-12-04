@@ -73,7 +73,7 @@ if (isset($_POST['email'])){
                         <input class="form-control" type="text" name="nickname" id="nickname" required="required" data-error="Nazwa użytkownika jest wymagana">
                         
                         <?php if (isset($_SESSION['e_nick'])){
-                            echo '<div class ="error">' . $_SESSION['e_nick'] . '</div>'; // POPRAWKI STYLU
+                            echo '<p class ="error">' . $_SESSION['e_nick'] . '</p>'; // POPRAWKI STYLU
                             unset($_SESSION['e_nick']);
                         }
                         ?>
@@ -137,5 +137,8 @@ if (isset($_POST['email'])){
             </div>
         </div>
     </div>
+    <?php
+    include 'footer.php';
+    ?>
 </body>
 </html>
