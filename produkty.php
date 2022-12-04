@@ -1,66 +1,33 @@
 <?php
-    if(isset($_POST['submit'])){
-        $kategorie_subkategorie = array(
-            array("komputery","laptopy"),
-            array("smartfony","smartwatche","tablety","komorkowe"),
-            array("procesory","karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy","chlodzenie","zasilacze"),
-            array("drukarki","monitory","mikrofony"),
-            array("telewizory","audio"),
-            array("klawiatury","myszki","sluchawki")
-        );
+    include 'connect.php';
 
-        $searchProducts_sql = "";
+    $searchProducts_sql = "SELECT name, price, picture_url FROM product WHERE ";
+    if(isset($_POST['submit'])){
+        $subkategorie = array("komputery","laptopy",
+        "smartfony","smartwatche","tablety","komorkowe","procesory",
+        "karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy",
+        "chlodzenie","zasilacze","drukarki","monitory","mikrofony",
+        "telewizory","audio","klawiatury","myszki","sluchawki");
+        
         $filtrs = array();
-        for($i = 0; $i<6; $i++){
-            if($i == 0){
-                if(isset($_POST['komputery_laptopy'])){
-                    array_push($filtrs, "1");
-                    continue;
-                }
-            }
-            if($i == 1){
-                if(isset($_POST['smartfony_smartwatche'])){
-                    echo "smartfony_smartwatche <br>";
-                    array_push($filtrs, "2");
-                    continue;
-                }
-            }
-            if($i == 2){
-                if(isset($_POST['podzespoly_komputerowe'])){
-                    echo "podzespoly_komputerowe <br>";
-                    array_push($filtrs, "3");
-                    continue;
-                }
-            }
-            if($i == 3){
-                if(isset($_POST['urzadzenia_peryferyjne'])){
-                    echo "urzadzenia_peryferyjne <br>";
-                    array_push($filtrs, "4");
-                    continue;
-                }
-            }
-            if($i == 4){
-                if(isset($_POST['tv_audio'])){
-                    echo "tv_audio <br>";
-                    array_push($filtrs, "5");
-                    continue;
-                }
-            }
-            if($i == 5){
-                if(isset($_POST['akcesoria'])){
-                    echo "akcesoria <br>";
-                    array_push($filtrs, "6");
-                    continue;
-                }
-            }
-            for($j = 0; $j < count($kategorie_subkategorie[$i]); $j++){
-                if(isset($_POST[$kategorie_subkategorie[$i][$j]])){
-                    array_push($filtrs, $kategorie_subkategorie[$i][$j]);
-                }
+        for ($i = 0; $i < count($subkategorie); $i++){
+            if(isset($_POST[$subkategorie[$i]])){
+                array_push($filtrs, strval($i+1));
             }
         }
 
-        // TU BĘDZIE SKLEJANY STRING W JEDNĄ KOMENDE SQL
+        $x = 0;
+        foreach($filtrs as $val){
+            $x++;
+            if(count($filtrs)>$x){
+                $searchProducts_sql .= "subcategory_id=" . $val . " OR ";
+            }else{
+                $searchProducts_sql .= "subcategory_id=" . $val;
+            }
+        }
+
+        $searchProducts_result = $connection->query($searchProducts_sql);
+
     }
 ?>
 
@@ -234,18 +201,26 @@
         </form>
         </div>
             <div class="col-8 p-0">
-            <!-- WYŚWIETLENIE PRODUKTÓW -->
-            <div class="container-fluid produkty d-flex flex-wrap w-100 p-0">
-                <div class="produkty__kartaProduktu d-flex flex-column align-items-center justify-content-between">
-                    <div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">
-                        <img src="assets/images/KartyGraficzne/1/1.webp" alt="">
-                    </div>
-                    <div class="produkty__kartaProduktu--text w-100">
-                        <a href="#">Lorem ipsum</a>
-                        <p>100zł</p>
+                <div class="container-fluid d-flex">
+                    <div class="container-fluid produkty d-flex flex-wrap w-100 p-0">
+                        <!-- WYŚWIETLENIE PRODUKTÓW -->
+                        <?php
+                        while($row = $searchProducts_result->fetch_assoc()){
+                            echo '<div class="produkty__kartaProduktu d-flex flex-column align-items-center justify-content-between m-2">';
+                                echo '<div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">';
+                                    echo '<img src="' . $row['picture_url'] . '" alt="">';
+                                echo '</div>';
+                                echo '<div class="produkty__kartaProduktu--text w-100">';
+                                    echo '<a href="#">' . $row['name'] . '</a>';
+                                    echo '<p>' . $row['price'] . '</p>';
+                                echo '</div>';
+                            echo '</div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
+            
             </div>
             <div class="col-2">
 

@@ -56,12 +56,12 @@ ul {
   max-height: 100%;
 }
 .produkty__kartaProduktu {
-  width: 300px;
+  width: 280px;
   height: 400px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .produkty__kartaProduktu--image {
-  width: 280px;
+  width: 270px;
   height: 300px;
 }
 .produkty__kartaProduktu--image img {
