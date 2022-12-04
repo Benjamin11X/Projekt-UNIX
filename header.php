@@ -42,11 +42,12 @@
                                     <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
                                     <?php
                                      if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
-                                        echo '<li><a class="dropdown-item" href="login.php">Zaloguj sie</a></li>
-                                                <li><a class="dropdown-item" href="register.php">Zamówienia</a></li>';
+                                        echo '<li><a class="dropdown-item" href="login.php">Twoje konto</a></li>
+                                                <li><a class="dropdown-item" href="register.php">Zamówienia</a></li>
+                                                <li><a class="dropdown-item" href="logout.php">Wyloguj się</a></li>';
                                     }
                                     else {
-                                        echo '<li><a class="dropdown-item" href="login.php">Twoje konto</a></li>
+                                        echo '<li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
                                         <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>';
                                     }
                                     ?>
