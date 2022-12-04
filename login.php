@@ -1,3 +1,7 @@
+<?php 
+    session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +43,12 @@
                         <input class="btn btn-outline-dark" type="submit" value="Zaloguj się"></input>
                     </div>
                 </form>
+
+                <?php
+                if(isset($_SESSION['blad'])){
+                echo $_SESSION['blad'];
+                    }
+                ?>
 
             </div>
             <div class="login-form-container__content__vl"></div>
