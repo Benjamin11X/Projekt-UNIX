@@ -1,3 +1,43 @@
+<?php
+session_start();
+
+if (isset($_POST['email'])){
+   
+    //Udana walidacja
+    $correct = true;
+
+    //Nick chceck 
+    $nickname = $_POST['nickname'];
+
+    if ((strlen($nickname)<3) || (strlen($nickname)>20)){
+        
+        $correct = false;
+        $_SESSION['e_nick'] = "Nazwa użytkownika musi posiadać od 3 do 20 znaków.";
+    }
+
+    if (ctype_alnum($nickname)==false){
+        $correct = false;
+        $_SESSION['e_nick'] = "Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
+    }
+
+    //email check 
+    $email = $_POST['email'];
+    $emailB = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    if((filter_var($emailB, FILTER_VALIDATE_EMAIL)== false ) || ($emailB!=$email)){
+        $correct = false;
+        $_SESSION['e_email'] = "Podaj poprawny adres e-mail";
+    }
+
+
+    if ($correct == true){
+        echo "Udana walidacja!";
+        exit();
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +55,9 @@
     <!-- IMPORTING STYLES -->
     <link rel="stylesheet" href="assets/styles/style.css">
 
+    <!-- CAPTCHA -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeCslQjAAAAAIBew8ZBBqV7mP-1CqGtCWrkn4rq"></script>
+
     <title>UNIX - Zarejestruj się</title>
 </head>
 <body>
@@ -28,6 +71,12 @@
                     <div class="mb-3">
                         <label for="nickname">Nazwa użytkownika *</label>
                         <input class="form-control" type="text" name="nickname" id="nickname" required="required" data-error="Nazwa użytkownika jest wymagana">
+                        
+                        <?php if (isset($_SESSION['e_nick'])){
+                            echo '<div class ="error">' . $_SESSION['e_nick'] . '</div>'; // POPRAWKI STYLU
+                            unset($_SESSION['e_nick']);
+                        }
+                        ?>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="mb-3">
@@ -41,11 +90,22 @@
                     <div class="mb-3">
                         <label for="email">Email *</label>
                         <input class="form-control" type="email" name="email" id="email" required="required" data-error="Email jest wymagany">
+
+                        <?php if (isset($_SESSION['e_email'])){
+                            echo '<div class ="error">' . $_SESSION['e_email'] . '</div>'; // POPRAWKI STYLU
+                            unset($_SESSION['e_email']);
+                        }
+                        ?>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="mb-3">
                         <label for="password">Hasło *</label>
-                        <input class="form-control" type="text" name="password" id="password" required="required" data-error="Hasło jest wymagane">
+                        <input class="form-control" type="password" name="password" id="password" required="required" data-error="Hasło jest wymagane">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Powtórz hasło *</label>
+                        <input class="form-control" type="password" name="password2" id="password2" required="required" data-error="Hasło jest wymagane">
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="mb-3">
