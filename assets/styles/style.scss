@@ -6,6 +6,10 @@ ul {
   background-color: #f8f9fa;
 }
 
+.error{
+  color:red;
+}
+
 .navbar_image {
   width: auto;
   height: 2.75rem;
@@ -68,12 +72,13 @@ ul {
 
 // === PRODUKTY - CONTAINER === //
 .produkty {
+  
   &__kartaProduktu {
-    width: 300px;
+    width: 280px;
     height: 400px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     &--image {
-      width: 280px;
+      width: 270px;
       height: 300px;
       img {
         max-width: 100%;
