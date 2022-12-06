@@ -152,7 +152,7 @@
                     <input type="text" placeholder="Twój e-mail">
                 </form>
             </div>
-            <div class="footer__newsletter--tab-icon">
+            <div class="newsletter--tab-icon">
                 <i class="fa-solid fa-envelope-open-text display-1"></i>
             </div>
         </div>

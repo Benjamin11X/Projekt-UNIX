@@ -29,11 +29,11 @@
                     <p class="fw-bold fs-5">Kontakt</p>
                     <div class="d-flex">
                         <i class="fa-solid fa-phone"></i>
-                        <p></p>
+                        <p>516 400 983</p>
                     </div>
                     <div class="d-flex">
                         <i class="fa-solid fa-envelope"></i>
-                        <p></p>
+                        <p>u19_adrianskup@zsp1.siedlce.pl</p>
                     </div>
                 </div>
             </div>
