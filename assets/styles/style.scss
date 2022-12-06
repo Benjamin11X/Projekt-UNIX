@@ -240,6 +240,8 @@ ul {
   }
 }
 
+
+
 // ===== FOOTER ===== //
 .footer {
   &__links {
@@ -284,6 +286,24 @@ ul {
   &__form {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
+  }
+}
+
+// ===== FAQ ===== //
+.faq {
+  &--tab {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    &-text {
+     padding: 1rem;
+     width: 100%;
+     a{
+      width: 100%;
+     }
+    }
   }
 }
 

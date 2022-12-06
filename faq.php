@@ -63,9 +63,63 @@
                 </div>
             </div>
         </div>
-
-        <!-- FAQ -->
     </div>
+    <!-- FAQ -->
+    <div class="faq container-lg my-5  w-100">
+    <h1>Najczęściej zadawane pytania</h1>
+        <div class="faq--tab d-flex">
+            <div class="faq--tab-text">
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq1" role="button" aria-expanded="false" aria-controls="collapseExample">Jak możesz oddać zużyty sprzęt elektryczny i elektroniczny, który był używany w gospodarstwie domowym?</a>
+                <div class="collapse" id="faq1">
+                    <div class="card card-body">
+                    Jeśli kupujesz nowy sprzęt, możesz bezpłatnie oddać nam zużyty sprzęt tego samego rodzaju i o tych samych funkcjach.
+                    <br><br>
+                    Jeśli nie kupujesz nowego sprzętu – zużyty możesz oddać w niektórych sklepach lub punktach zbiórki odpadów. Szczegóły znajdziesz poniżej.
+                    <br><br>
+                    Możesz oddać nam zużyty sprzęt, jeśli jednocześnie kupujesz nowy
+                    Jeśli kupujesz u nas sprzęt elektroniczny lub elektryczny dla gospodarstw domowych, możesz bezpłatnie oddać zużyty sprzęt. Twój zużyty sprzęt musi być tego samego rodzaju i o tych samych funkcjach, co nowy. Na przykład, kiedy kupujesz u nas nowy monitor, możesz oddać nam swój stary monitor.
+                    <br><br>
+                    W jakim stanie powinien być sprzęt, który oddajesz
+                    Sprzęt, który oddajesz, musi być kompletny. Nie może być też zanieczyszczony w sposób, który może zagrażać życiu lub zdrowiu. Oznacza to, że możemy na przykład odmówić przyjęcia smartfona z wylaną baterią.
+                    <br><br>
+                    Jak oddać nam zużyty sprzęt w salonie
+                    Jeśli robisz zakupy w salonie, zabierz zużyty sprzęt elektroniczny lub elektryczny ze sobą. Kup nowy sprzęt i oddaj bezpłatnie zużyty sprzęt elektroniczny lub elektryczny naszemu doradcy.
+                    <br><br>
+                    Jak przekazać nam zużyty sprzęt przy zakupach z dostawą
+                    Jeśli kupujesz sprzęt z dostawą – zadzwoń do nas pod 34 377 00 00 lub napisz na x-kom@x-kom.pl. Ustalimy wspólnie termin, w którym kurier odbierze od Ciebie bezpłatnie zużyty sprzęt elektroniczny lub elektryczny z tego samego adresu.
+                    <br><br>
+                    Gdzie możesz oddać nieduży zużyty sprzęt, jeśli nie kupujesz nowego
+                    Zgodnie z prawem, nieduży zużyty sprzęt możesz za darmo oddać w dowolnym wielkopowierzchniowym sklepie z urządzeniami dla gospodarstw domowych. Chodzi o sklepy, których powierzchna handlowa przekracza 400 m².
+                    <br><br>
+                    Zasada ta dotyczy takiego sprzętu elektrycznego i elektronicznego, którego żaden z wymiarów nie przekracza 25 cm. Nieduży zużyty sprzęt możesz oddać nawet wtedy, gdy nie kupujesz nowego sprzętu tego samego rodzaju.
+                    <br><br>
+                    Gdzie możesz oddać bezpłatnie zużyty sprzęt w pozostałych przypadkach
+                    Jeśli nie kupujesz nowego sprzętu tego samego rodzaju oraz jeden z wymiarów sprzętu przekracza 25 cm – zanieś zużyty sprzęt do jednego z punktów selektywnej zbiórki odpadów. W punktach możesz zostawić bezpłatnie zarówno większy, jak i drobny sprzęt elektroniczny lub elektryczny.
+                    <br><br>
+                    Dlaczego powinniśmy dbać o recykling sprzętu w gospodarstwach domowych
+                    Każdy z nas ma wpływ na to, co dzieje się ze starym sprzętem elektronicznym, którego używamy. Za prawidłowe postępowanie ze zużytym sprzętem odpowiadają nie tylko przedsiębiorcy, ale także konsumenci. Dlatego ważne jest, żeby w Twoim domu segregować i utylizować stary sprzęt w odpowiedni sposób. Dzięki temu pomagasz chronić środowisko. Wiele cennych surowców, z których zrobione są urządzenia, można ponownie wykorzystać.
+                    <br><br>
+                    Nigdy nie wyrzucaj zużytego sprzętu wraz z innymi odpadami. Zanieś go do odpowiedniego punktu zbiórki takich urządzeń.
+                    <br><br>
+                    Podstawa prawna
+                    Ustawa o zużytym sprzęcie elektrycznym i elektronicznym.
+                    </div>
+                </div>
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq2" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+                <div class="collapse" id="faq2">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq3" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+                <div class="collapse" id="faq3">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
     <?php
     include 'footer.php';
     ?>
