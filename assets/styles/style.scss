@@ -45,6 +45,14 @@ ul {
 
 //===== INDEX - PRODUCTS =====//
 .showcase {
+  a{
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #33adff;
+  }
   &__text {
   }
   &__products {
@@ -211,10 +219,23 @@ ul {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     &-text {
-      p {
+      width: 60%;
+      padding: 1rem;
+      input{
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        text-align: center;
       }
     }
     &-icon {
+      width: 40%;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      padding: 1rem;
+      i{
+        font-size: 7rem;
+      }
     }
   }
 }
@@ -227,6 +248,18 @@ ul {
       a {
         text-decoration: none;
         color: #212529;
+      }
+      a:hover {
+        color: #33adff;
+      }
+      i{
+        padding-top: 5px;
+      }
+      i:hover {
+        color: #33adff;
+      }
+      p:hover {
+        color: #33adff;
       }
     }
   }
