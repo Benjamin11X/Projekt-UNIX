@@ -1,5 +1,5 @@
 <?php 
-    session_start()
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,11 @@
         <hr class="bg-danger border-2 border-top border-dark w-100">
         <div class="login-form-container__content container-fluid d-flex flex-column flex-md-row justify-content-between">
             <div class="login-form-container__content__form">
+                <?php
+                    if(isset($_GET['zalogowany']) && $_GET['zalogowany'] == 0){
+                        echo '<h3>Zaloguj się aby dodać rzeczy do koszyka</h3>';
+                    }
+                ?>
                 <h1>Zaloguj się</h1>
                 <form action="zaloguj.php" method="post">
                     <div class="mb-3">

@@ -1,7 +1,7 @@
 <?php
     include 'connect.php';
 
-    $searchProducts_sql = "SELECT name, price, picture_url FROM product WHERE ";
+    $searchProducts_sql = "SELECT id, name, price, picture_url FROM product WHERE ";
     $subkategorie = array("komputery","laptopy",
         "smartfony","smartwatche","tablety","komorkowe","procesory",
         "karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy",
@@ -208,21 +208,17 @@
                         <!-- WYŚWIETLENIE PRODUKTÓW -->
                         
                         <?php
-                        echo '<div class="row">';
                         while($row = $searchProducts_result->fetch_assoc()){
-                            echo '<div class="col-3">';
-                                echo '<div class="produkty__kartaProduktu d-flex flex-column align-items-center m-2">';
-                                    echo '<div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">';
-                                        echo '<img src="' . $row['picture_url'] . '" alt="">';
-                                    echo '</div>';
-                                    echo '<div class="produkty__kartaProduktu--text w-100">';
-                                        echo '<a href="#">' . $row['name'] . '</a>';
-                                        echo '<p>' . $row['price'] . '</p>';
-                                    echo '</div>';
+                            echo '<div class="produkty__kartaProduktu d-flex flex-column align-items-center m-2">';
+                                echo '<div class="produkty__kartaProduktu--image d-flex align-items-center justify-content-center">';
+                                    echo '<img src="' . $row['picture_url'] . '" alt="">';
+                                echo '</div>';
+                                echo '<div class="produkty__kartaProduktu--text w-100">';
+                                     echo '<a href="produkt.php?id=' . $row['id'] .'">' . $row['name'] . '</a>';
+                                    echo '<p>' . $row['price'] . '</p>';
                                 echo '</div>';
                             echo '</div>';
                         }
-                        echo '</div>';
                         ?>
                     </div>
                 </div>

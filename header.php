@@ -1,5 +1,6 @@
+<?php
 
-
+?>
 
 <!-- === NAVBAR === -->
 
@@ -37,13 +38,11 @@
                                 <i class="fa-solid fa-user navbar-icon"></i>
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown0" role="button" data-bs-toggle="dropdown" aria-expanded="false">Twoje konto</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown0">
-                                    <!--<li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
-                                    <li><a class="dropdown-item" href="register.php">Zarejestruj się</a></li>-->
                                     <!-- PHP JEŻELI UŻYTKOWNIK JEST ZALOGOWANY WYŚWIETL INNE OPCJE -->
                                     <?php
                                      if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
-                                        echo '<li><a class="dropdown-item" href="login.php">Twoje konto</a></li>
-                                                <li><a class="dropdown-item" href="register.php">Zamówienia</a></li>
+                                        echo '<li><a class="dropdown-item" href="account.php">Twoje konto</a></li>
+                                                <li><a class="dropdown-item" href="orders.php">Zamówienia</a></li>
                                                 <li><a class="dropdown-item" href="logout.php">Wyloguj się</a></li>';
                                     }
                                     else {
@@ -61,7 +60,13 @@
                                 <i class="fa-solid fa-cart-shopping navbar-icon"></i>
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koszyk</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                    <!-- PHP JEŻELI KOSZYK PUSTY WYŚWIETL "KOSZYK PUSTY" JEŻELI COŚ JEST WYŚWIETL PRODUKTY -->
+                                    <?php
+                                        if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                                            echo '<li><a class="dropdown-item" href="cart.php">Sprawdz koszyk</a></li>';
+                                        }else{
+                                            echo '<li><span class="dropdown-item-text" >Koszyk jest pusty, zarejestruj sie aby dodać rzeczy do koszyka</span></li>';
+                                        }
+                                    ?>
                                    
                                 </ul>
                             </li>
