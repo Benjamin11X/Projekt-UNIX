@@ -53,6 +53,9 @@ ul {
           transform: scale(1.05);
 }
 
+.showcase__products {
+  overflow-x: hidden;
+}
 .showcase__products--product {
   height: 450px;
   width: 300px;
@@ -70,7 +73,7 @@ ul {
 }
 .produkty__kartaProduktu {
   width: 280px;
-  height: 400px;
+  height: 340px;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
      -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -228,6 +231,18 @@ ul {
           border-radius: 8px;
 }
 
+@media (max-width: 1450px) {
+  .filtrbar {
+    width: 100%;
+  }
+  .filtrbar__filtr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 @media (max-width: 768px) {
   .register-form-container__logo {
     padding-top: 1rem;

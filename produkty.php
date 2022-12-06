@@ -11,7 +11,7 @@
         $filtrs_filtr = array();
         for ($i = 0; $i < count($subkategorie); $i++){
             if(isset($_POST[$subkategorie[$i]])){
-                array_push($filtrs__filtr, strval($i+1));
+                array_push($filtrs_filtr, strval($i+1));
             }
         }
 
@@ -62,13 +62,13 @@
     <!-- FILTR BAR -->
     <div class="container-fluid">
         <div class="row my-4">
-            <div class="col-2">
-            <form class="filtr" method="post">
-            <ul class="filtr__kategoria mb-1">
+            <div class="col-2 filtrbar">
+            <form class="filtrbar__filtr" method="post">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="komputery_laptopy" value="1" id="komputery_laptopy">
                     <label for="komputery_laptopy">Komputery i laptopy</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="komputery" value="komputery" id="komputery">
                             <label for="komputery">Komputery</label>
@@ -80,11 +80,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="filtr__kategoria mb-1">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="smartfony_smartwatche" value="2" id="smartfony_smartwatche">
                     <label for="smartfony_smartwatche">Smartfony i smartwatche</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="smartfony" value="smartfony" id="smartfony">
                             <label for="smartfony">Smartfony</label>
@@ -104,11 +104,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="filtr__kategoria mb-1">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="podzespoly_komputerowe" value="3" id="podzespoly_komputerowe">
                     <label for="podzespoly_komputerowe">Podzespoły komputerowe</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="procesory" value="procesory" id="procesory">
                             <label for="procesory">Procesory</label>
@@ -144,11 +144,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="filtr__kategoria mb-1">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="urzadzenia_peryferyjne" value="4" id="urzadzenia_peryferyjne">
                     <label for="urzadzenia_peryferyjne">Urządzenia peryferyjne</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="drukarki" value="drukarki" id="drukarki">
                             <label for="drukarki">Drukarki</label>
@@ -164,11 +164,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="filtr__kategoria mb-1">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="tv_audio" value="5" id="tv_audio">
                     <label for="tv_audio">TV i Audio</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="telewizory" value="telewizory" id="telewizory">
                             <label for="telewizory">Telewizory</label>
@@ -180,11 +180,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="filtr__kategoria mb-1">
+            <ul class="filtrbar__filtr__kategoria mb-1">
                 <li>
                     <input type="checkbox" class="form-check-input" name="akcesoria" value="6" id="akcesoria">
                     <label for="akcesoria">Akcesoria</label>
-                    <ul class="filtr__kategoria--expandList">
+                    <ul class="filtrbar__filtr__kategoria--expandList">
                         <li>
                             <input type="checkbox" class="form-check-input" name="klawiatury" value="klawiatury" id="klawiatury">
                             <label for="klawiatury">Klawiatury</label>
@@ -204,7 +204,7 @@
         </form>
         </div>
             <div class="col-8 p-0">
-                <div class="container-fluid d-flex align-items-center jutify-content-center">
+                <div class="container-fluid d-flex flex-wrap justify-content-evenly">
                         <!-- WYŚWIETLENIE PRODUKTÓW -->
                         
                         <?php
@@ -220,12 +220,14 @@
                             echo '</div>';
                         }
                         ?>
-                    </div>
                 </div>
             </div>
             <div class="col-2">
 
             </div>
+        </div>
+            
+            
         </div>
         
         

@@ -60,7 +60,7 @@
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="showcase__products overflow-hidden d-flex">
+        <div class="showcase__products d-flex">
             
                 <?php 
                     while($row = $bestsellers_result->fetch_assoc()){
@@ -87,7 +87,7 @@
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="showcase__products overflow-hidden d-flex">
+        <div class="showcase__products d-flex">
                 <?php 
                     while($row = $discounts_result->fetch_assoc()){
                         echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
