@@ -74,7 +74,7 @@
                                 <i class="fa-solid fa-headphones navbar-icon"></i>
                                 <a class="nav-link navbar-label" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pomoc i kontakt</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    <li><a class="dropdown-item" href="kontakt.php">FAQ</a></li>
+                                    <li><a class="dropdown-item" href="faq.php">FAQ</a></li>
                                     <li><a class="dropdown-item" href="kontakt.php">Kontakt</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><span class="dropdown-item-text">Kontakt</span></li>
