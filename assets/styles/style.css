@@ -235,11 +235,15 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .faq--tab-text {
-  padding: 1rem;
+  padding: 1rem 0rem;
   width: 100%;
 }
 .faq--tab-text a {
-  width: 100%;
+  width: 95%;
+  margin: 10px 0px;
+}
+.faq--tab-text-collapse {
+  width: 95%;
 }
 
 @media (max-width: 1450px) {

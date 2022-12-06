@@ -68,9 +68,9 @@
     <div class="faq container-lg my-5  w-100">
     <h1>Najczęściej zadawane pytania</h1>
         <div class="faq--tab d-flex">
-            <div class="faq--tab-text">
+            <div class="faq--tab-text d-flex flex-column align-items-center">
                 <a class="btn btn-light" data-bs-toggle="collapse" href="#faq1" role="button" aria-expanded="false" aria-controls="collapseExample">Jak możesz oddać zużyty sprzęt elektryczny i elektroniczny, który był używany w gospodarstwie domowym?</a>
-                <div class="collapse" id="faq1">
+                <div class="faq--tab-text-collapse collapse" id="faq1">
                     <div class="card card-body">
                     Jeśli kupujesz nowy sprzęt, możesz bezpłatnie oddać nam zużyty sprzęt tego samego rodzaju i o tych samych funkcjach.
                     <br><br>
@@ -105,16 +105,16 @@
                     Ustawa o zużytym sprzęcie elektrycznym i elektronicznym.
                     </div>
                 </div>
-                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq2" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
-                <div class="collapse" id="faq2">
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq2" role="button" aria-expanded="false" aria-controls="collapseExample">Lorem Ipsum</a>
+                <div class="faq--tab-text-collapse collapse" id="faq2">
                     <div class="card card-body">
-                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
                     </div>
                 </div>
-                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq3" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
-                <div class="collapse" id="faq3">
+                <a class="btn btn-light" data-bs-toggle="collapse" href="#faq3" role="button" aria-expanded="false" aria-controls="collapseExample">Lorem Ipsum</a>
+                <div class="faq--tab-text-collapse collapse" id="faq3">
                     <div class="card card-body">
-                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
                     </div>
                 </div>
             </div>
