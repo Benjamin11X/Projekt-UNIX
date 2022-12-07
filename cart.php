@@ -2,6 +2,7 @@
     session_start();
     include 'connect.php';
 
+    
     if(isset($_GET['id'])){
         $product_id = $_GET['id'];
         $client_id = $_SESSION['id'];
@@ -12,10 +13,15 @@
         $addToCart_sql = "INSERT INTO cart VALUES (DEFAULT,'" . $client_id . "','" . $product_id . "','" . $product_quantity . "','" . strval($final_price) . "')";
 
         $connection->query($addToCart_sql);
+
+        
     }
 
     $cart_sql = "SELECT product.id, product.name, product.price, product.picture_url, cart.quantity FROM product INNER JOIN cart ON product.id = cart.product_id WHERE cart.client_id = " . $_SESSION['id'] . ""; 
     $cart_result = $connection->query($cart_sql);
+
+    $productsInCart_sql = "SELECT id FROM cart WHERE client_id=" . $_SESSION['id'] . "";
+    $productsInCart_result = $connection->query($productsInCart_sql);
 
 ?>
 
@@ -48,7 +54,7 @@
             <div class="cart__products container-fluid d-flex flex-column">
                 <?php
                     $sum = 0;
-                    while($row = $cart_result->fetch_assoc()){
+                    while(($row = $cart_result->fetch_assoc()) && ($row1 = $productsInCart_result->fetch_assoc())){
                         echo '<div class="cart__products--product my-4 w-100 d-flex flex-column flex-md-row">';
                             echo '<div class="cart__products--product-image">';
                                 echo '<img src="' . $row['picture_url'] . '" alt="">';
@@ -59,18 +65,23 @@
                                 echo '<p>Ilość: ' . $row['quantity'] . '</p>';
                                 echo '<p>Cena: ' . $row['price'] . 'zł</p>';
                                 echo '<hr class="bg-danger border-1 border-top border-dark ">';
-                                echo '<p>Razem: ' . strval(intval($row['price']) * intval($row['quantity'])) . 'zł</p>';
+                                echo '<div class="d-flex justify-content-between">';
+                                    echo '<p>Razem: ' . strval(intval($row['price']) * intval($row['quantity'])) . 'zł</p>';
+                                    echo '<a class="btn btn-danger" href="deleteProductFromCart.php?id='. $row1['id'] .'">Usuń</a>';
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                         $sum += (intval($row['price']) * intval($row['quantity']));
+                        echo '<hr class="bg-danger border-2 border-top border-dark">';
                     }
+                    
                 ?>
             </div>
             <div class="cart__summary container-fluid">
                 <!-- PHP -->
                 <div class="cart__summary--content">
                     <?php echo '<p>Razem: ' . $sum .'zł</p>'; ?>
-                    <a href="" class="btn btn-success">Zamawiam i płace</a>
+                    <a href="order.php" class="btn btn-success">Zamawiam i płace</a>
                 </div>
                 <!-- END OF PHP -->
             </div>

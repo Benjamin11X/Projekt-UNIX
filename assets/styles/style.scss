@@ -45,7 +45,7 @@ ul {
 
 //===== INDEX - PRODUCTS =====//
 .showcase {
-  a{
+  a {
     color: black;
     padding: 1rem;
     text-decoration: none;
@@ -221,7 +221,7 @@ ul {
     &-text {
       width: 60%;
       padding: 1rem;
-      input{
+      input {
         background-position: 10px 10px;
         background-repeat: no-repeat;
         text-align: center;
@@ -233,10 +233,23 @@ ul {
       justify-content: right;
       align-items: center;
       padding: 1rem;
-      i{
+      i {
         font-size: 7rem;
       }
     }
+  }
+}
+
+// ===== ACCOUNT ===== //
+.account {
+  &__info {
+    width: 70%;
+    &--form {
+      padding: 0 3rem;
+    }
+  }
+  &__links {
+    width: 30%;
   }
 }
 
@@ -252,7 +265,7 @@ ul {
       a:hover {
         color: #33adff;
       }
-      i{
+      i {
         padding-top: 5px;
       }
       i:hover {

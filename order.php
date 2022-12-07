@@ -1,10 +1,7 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,29 +19,10 @@
     <title>UNIX</title>
 </head>
 <body>
-    <!-- HEADER -->
     <?php include 'header.php'; ?>
 
-    <!-- CONTENT -->
-    <div class="container-fluid">
-        <div class="container-lg d-flex">
-            <div class="account w-100">
-                <div class="account__info">
-                    <form class="account__info--form my-4" action="" method="post">
-                        <div class="account__info--form-row">
-                            <label for="name" class="form-label">Nazwa/Login</label>
-                            <input type="text" class="form-control mb-2" id="name" name="pswd">
-                            <button type="submit" class="btn btn-primary">Edytuj</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="account__links">
+    
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FOOTER -->
     <?php include 'footer.php'; ?>
 </body>
 </html>

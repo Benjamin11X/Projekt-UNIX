@@ -82,8 +82,6 @@
                                     <li><span class="dropdown-item-text">505404303</span></li>
                                     <li><span class="dropdown-item-text">Pon. - Pt. 10:00 - 18:00</span></li>
                                     <li><span class="dropdown-item-text">Sb. - Nd. 12:00 - 16:00</span></li>
-                                    
-                                   
                                 </ul>
                             </li>
                         </ul>
