@@ -3,7 +3,7 @@
 ?>
 
 <!-- === NAVBAR === -->
-
+<script src="assets/scripts/header.js" defer></script>
     <!-- TOP NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
         <div class="container-lg">
@@ -92,7 +92,10 @@
     </nav>  
 
     <!-- BOTTOM NAVBAR -->
-    <div class="container-fluid d-flex">
+    <div class="container-xxl d-flex">
+        <button id="btn-left">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
         <div class="container">
             <div class="slider-wrapper overflow-hidden d-flex justify-content-xxl-evenly py-3" id="slider-wrapper">
                 <div class="category-container">
@@ -167,10 +170,8 @@
                 </div>
             </div>
         </div>
-        <button>
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button>
+
+        <button id="btn-right">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     </div>
