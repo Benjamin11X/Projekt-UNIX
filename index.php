@@ -63,7 +63,6 @@
         <!-- PRODUCTS -->
         <div class="showcase__products d-flex">
                 <?php 
-                    
                     while($row = $bestsellers_result->fetch_assoc()){
                         $polubione = false;
                         $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";

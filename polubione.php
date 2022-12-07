@@ -1,6 +1,10 @@
 <?php
     include 'connect.php';
     session_start();
+
+    $polubione_sql = "SELECT polubione.produkt_id, polubione.id, product.name, product.price, product.discount , product.picture_url FROM polubione INNER JOIN product ON polubione.produkt_id = product.id WHERE polubione.user_id=". $_SESSION['id'] ."";
+    $polubione_result = $connection->query($polubione_sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +32,29 @@
 
     <!-- CONTENT -->
     <div class="conteiner-flud">
-        <div class="container-lg">
-            
+        <div class="container-lg polubione d-flex flex-column">
+            <?php
+                while($row = $polubione_result->fetch_assoc()){
+                    echo '<div class="polubione__product d-flex">';
+                        echo '<div class="polubione__product--image d-flex justify-content-center align-items-center">';
+                            echo '<img src='.$row['picture_url'].'>';
+                        echo '</div>';
+                        echo '<div class="polubione__product--info d-flex flex-column justify-content-between">';
+                            echo '<a href="produkt.php?id=' . $row['produkt_id'] . '">' . $row['name'] . '</a>';
+                            echo '<div class="polubione__product--info-price d-flex align-items-center">';
+                            if($row['discount']!=0){
+                                echo '<del>'. $row['price'] .'zł</del>';
+                                echo '<p>' . $row['discount'] .'zł</p>';
+                            }
+                            else{
+                                echo '<p>' . $row['price'] .'zł</p>';
+                            }
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                    echo '<hr class="bg-danger border-2 border-top border-dark">';
+                }
+            ?>
         </div>
     </div>
 

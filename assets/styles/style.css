@@ -175,6 +175,35 @@ ul {
           border-radius: 5px;
 }
 
+.polubione__product {
+  height: 8rem;
+}
+.polubione__product--image {
+  width: 8rem;
+  height: 8rem;
+}
+.polubione__product--image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.polubione__product--info a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1.5rem;
+  padding: 20px 0 0 0;
+}
+.polubione__product--info-price {
+  padding: 0 0 20px 0;
+}
+.polubione__product--info-price p {
+  margin: 0 0 0 10px;
+  font-size: 1.3rem;
+}
+.polubione__product--info-price del {
+  font-size: 1.2rem;
+  color: #969696;
+}
+
 .cart__products--product {
   min-height: 8rem;
 }

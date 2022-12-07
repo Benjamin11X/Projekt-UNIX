@@ -171,6 +171,40 @@ ul {
   }
 }
 
+// ===== POLUBIONE ===== //
+.polubione {
+  &__product {
+    height: 8rem;
+    &--image {
+      width: 8rem;
+      height: 8rem;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    &--info {
+      a {
+        text-decoration: none;
+        color: #212529;
+        font-size: 1.5rem;
+        padding: 20px 0 0 0;
+      }
+      &-price {
+        padding: 0 0 20px 0;
+        p {
+          margin: 0 0 0 10px;
+          font-size: 1.3rem;
+        }
+        del {
+          font-size: 1.2rem;
+          color: #969696;
+        }
+      }
+    }
+  }
+}
+
 // ===== CART ===== //
 .cart {
   &__products {
