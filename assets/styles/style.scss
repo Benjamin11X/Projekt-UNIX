@@ -164,6 +164,40 @@ ul {
   }
 }
 
+// ===== ORDER ===== //
+.order {
+  &__products {
+    width: 70%;
+    margin: 0px 30px 0 0;
+    &--product {
+      min-height: 8rem;
+      &-image {
+        height: 100%;
+        width: 8rem;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      &-content {
+        * {
+          margin: 2px;
+        }
+        a {
+          text-decoration: none;
+          color: #212529;
+        }
+      }
+    }
+  }
+  &__summary {
+    width: 30%;
+    border: solid 2px #c6c7c8;
+    border-radius: 5px;
+    padding: 20px;
+  }
+}
+
 //===== REGISTER FORM ===== //
 .register-form-container {
   min-height: 100vh;

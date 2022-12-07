@@ -150,6 +150,37 @@ ul {
   color: #212529;
 }
 
+.order__products {
+  width: 70%;
+  margin: 0px 30px 0 0;
+}
+.order__products--product {
+  min-height: 8rem;
+}
+.order__products--product-image {
+  height: 100%;
+  width: 8rem;
+}
+.order__products--product-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.order__products--product-content * {
+  margin: 2px;
+}
+.order__products--product-content a {
+  text-decoration: none;
+  color: #212529;
+}
+.order__summary {
+  width: 30%;
+  border: solid 2px #c6c7c8;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  padding: 20px;
+}
+
 .register-form-container {
   min-height: 100vh;
 }
@@ -294,10 +325,18 @@ ul {
 }
 
 .faq--tab {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .faq--tab-text {
   padding: 1rem 0rem;

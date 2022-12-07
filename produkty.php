@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'connect.php';
 
     $searchProducts_sql = "SELECT id, name, price, picture_url FROM product WHERE ";
