@@ -174,10 +174,11 @@ ul {
 // ===== POLUBIONE ===== //
 .polubione {
   &__product {
-    height: 8rem;
+    min-height: 8rem;
     &--image {
       width: 8rem;
-      height: 8rem;
+      min-height: 8rem;
+      margin: 0 25px 0 0;
       img {
         max-height: 100%;
         max-width: 100%;

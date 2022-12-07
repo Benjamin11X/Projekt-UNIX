@@ -35,7 +35,7 @@
         <div class="container-lg polubione d-flex flex-column">
             <?php
                 while($row = $polubione_result->fetch_assoc()){
-                    echo '<div class="polubione__product d-flex">';
+                    echo '<div class="polubione__product d-flex flex-column flex-md-row">';
                         echo '<div class="polubione__product--image d-flex justify-content-center align-items-center">';
                             echo '<img src='.$row['picture_url'].'>';
                         echo '</div>';

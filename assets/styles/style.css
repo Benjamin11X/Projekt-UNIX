@@ -176,11 +176,12 @@ ul {
 }
 
 .polubione__product {
-  height: 8rem;
+  min-height: 8rem;
 }
 .polubione__product--image {
   width: 8rem;
-  height: 8rem;
+  min-height: 8rem;
+  margin: 0 25px 0 0;
 }
 .polubione__product--image img {
   max-height: 100%;

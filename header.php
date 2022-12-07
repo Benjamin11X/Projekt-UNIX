@@ -90,7 +90,7 @@
 
     <!-- BOTTOM NAVBAR -->
     <div class="container-fluid d-flex">
-        <div class="container">
+        <div class="container-lg">
             <div class="slider-wrapper overflow-hidden d-flex justify-content-xxl-evenly py-3" id="slider-wrapper">
                 <div class="category-container">
                     <button type="button" class="category-button category-button-shadow btn d-flex justify-content-evenly align-items-center" data-bs-toggle="dropdown">
