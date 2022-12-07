@@ -293,6 +293,24 @@ ul {
           border-radius: 8px;
 }
 
+.faq--tab {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.faq--tab-text {
+  padding: 1rem 0rem;
+  width: 100%;
+}
+.faq--tab-text a {
+  width: 95%;
+  margin: 10px 0px;
+}
+.faq--tab-text-collapse {
+  width: 95%;
+}
+
 @media (max-width: 1450px) {
   .filtrbar {
     width: 100%;
