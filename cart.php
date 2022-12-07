@@ -23,6 +23,10 @@
     $productsInCart_sql = "SELECT id FROM cart WHERE client_id=" . $_SESSION['id'] . "";
     $productsInCart_result = $connection->query($productsInCart_sql);
 
+    $isSomethingIn_sql = "SELECT COUNT(id) FROM cart WHERE client_id=" . $_SESSION['id']. "";
+    $isSomethingIn_result = $connection->query($isSomethingIn_sql);
+    $isSomethingIn = $isSomethingIn_result->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -80,8 +84,18 @@
             <div class="cart__summary container-fluid">
                 <!-- PHP -->
                 <div class="cart__summary--content">
-                    <?php echo '<p>Razem: ' . $sum .'zł</p>'; ?>
-                    <a href="order.php" class="btn btn-success">Zamawiam i płace</a>
+                    <?php
+                        if($isSomethingIn['COUNT(id)']==0){
+                            echo '<p>Koszyk jest pusty</p>';
+                            echo '<a href="order.php" class="btn btn-success disabled">Zamawiam i płace</a>';
+                        }
+                        else{
+                            echo '<p>Razem: ' . $sum .'zł</p>';
+                            echo '<a href="order.php" class="btn btn-success">Zamawiam i płace</a>';
+                        }
+                    ?>
+                    <?php  ?>
+                    
                 </div>
                 <!-- END OF PHP -->
             </div>
