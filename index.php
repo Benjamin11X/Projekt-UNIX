@@ -79,7 +79,15 @@
                                     echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
                                 echo '</div>';
                                 echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
-                                    echo '<p>' . $row['price'] . 'zł</p>';
+                                    if($row['discount']!=0){
+                                        echo '<div class="d-flex align-items-center">';
+                                            echo '<del class="me-2">'. $row['price'] .'zł</del>';
+                                            echo '<p>' . $row['discount'] .'zł</p>';
+                                        echo '</div>';
+                                    }
+                                    else{
+                                        echo '<p>' . $row['price'] .'zł</p>';
+                                    }
                                     if($polubione){
                                         echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
                                     }
@@ -123,7 +131,15 @@
                                     echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
                                 echo '</div>';
                                 echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
-                                    echo '<p>' . $row['discount'] . 'zł</p>';
+                                    if($row['discount']!=0){
+                                        echo '<div class="d-flex align-items-center">';
+                                            echo '<del class="me-2">'. $row['price'] .'zł</del>';
+                                            echo '<p>' . $row['discount'] .'zł</p>';
+                                        echo '</div>';
+                                    }
+                                    else{
+                                        echo '<p>' . $row['price'] .'zł</p>';
+                                    }
                                     if($polubione){
                                         echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
                                     }

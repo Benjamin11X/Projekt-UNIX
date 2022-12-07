@@ -122,22 +122,85 @@ ul {
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-
-.produkty__kartaProduktu {
-  width: 280px;
-  height: 340px;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-     -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.showcase__products--product-text-priceAndLinks del {
+  font-size: 1.25rem;
+  color: #969696;
 }
-.produkty__kartaProduktu--image {
-  width: 270px;
+
+.produkty__text a {
+  color: black;
+  text-decoration: none;
+}
+.produkty__text a:hover {
+  color: #33adff;
+}
+.produkty__products {
+  overflow-x: hidden;
+}
+.produkty__products--product {
+  height: 450px;
+  width: 300px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.produkty__products--product-img {
+  width: 280px;
   height: 300px;
 }
-.produkty__kartaProduktu--image img {
-  max-width: 100%;
-  max-height: 100%;
+.produkty__products--product-img img {
+  min-width: 100%;
+  min-height: auto;
 }
+.produkty__products--product-text {
+  height: 150px;
+  width: 100%;
+}
+.produkty__products--product-text-name {
+  height: 90px;
+  padding: 15px;
+  overflow: hidden;
+}
+.produkty__products--product-text-name a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1.5rem;
+}
+.produkty__products--product-text-priceAndLinks {
+  height: 60px;
+  padding: 0 15px;
+}
+.produkty__products--product-text-priceAndLinks p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.produkty__products--product-text-priceAndLinks a {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  position: relative;
+}
+.produkty__products--product-text-priceAndLinks a i {
+  position: absolute;
+  font-size: 28px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.produkty__products--product-text-priceAndLinks del {
+  font-size: 1.25rem;
+  color: #969696;
+}
+
 .produkt__sliderContainer {
   width: 50%;
 }
