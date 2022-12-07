@@ -1,12 +1,13 @@
 <?php
     session_start();
     include 'connect.php';
-    $bestsellers_sql = "SELECT name, price, picture_url FROM product ORDER BY sales DESC LIMIT 5";
+    $bestsellers_sql = "SELECT id, name, discount ,price, picture_url FROM product ORDER BY sales DESC LIMIT 5";
     $bestsellers_result = $connection->query($bestsellers_sql);
 
-    $discounts_sql = "SELECT name, discount, picture_url FROM product WHERE discount!=0 LIMIT 5";
+    $discounts_sql = "SELECT id, name, price, discount, picture_url FROM product WHERE discount!=0 LIMIT 5";
     $discounts_result = $connection->query($discounts_sql);
 
+    
    
 ?>
 
@@ -55,25 +56,43 @@
     <!-- BESTSELLERS -->
     <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
-        <div class="showcase__text d-flex justify-content-between">
+        <div class="showcase__text d-flex justify-content-between align-items-center">
             <h1>Bestsellery</h1>
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
         <div class="showcase__products d-flex">
-            
                 <?php 
+                    
                     while($row = $bestsellers_result->fetch_assoc()){
+                        $polubione = false;
+                        $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
+                        $polubione_result = $connection->query($polubione_sql);
+                        if($polubione_result->fetch_assoc()){
+                            $polubione = true;
+                        }
                         echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
-                            echo '<div class="showcase__products--product-img">';
+                            echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
                                 echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
                             echo '</div>';
-                            echo '<div class="showcase__products--product-text">';
-                                echo '<h4>' . $row['name'] . '</h4>';
-                                echo '<p>' . $row['price'] . 'zł</p>';
+                            echo '<div class="showcase__products--product-text d-flex flex-column justify-content-end">';
+                                echo '<div class="showcase__products--product-text-name">';
+                                    echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
+                                echo '</div>';
+                                echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
+                                    echo '<p>' . $row['price'] . 'zł</p>';
+                                    if($polubione){
+                                        echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                    }
+                                    else{
+                                        echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                    }
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
+                        
                     }
+                    
                 ?>
         </div>  
         
@@ -82,7 +101,7 @@
     <!-- PROMOTIONS -->
     <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
-        <div class="d-flex justify-content-between">
+        <div class="showcase__text d-flex justify-content-between align-items-center">
             <h1>Promocje</h1>
             <a href="#">Zobacz więcej</a>
         </div>
@@ -90,13 +109,29 @@
         <div class="showcase__products d-flex">
                 <?php 
                     while($row = $discounts_result->fetch_assoc()){
+                        $polubione = false;
+                        $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
+                        $polubione_result = $connection->query($polubione_sql);
+                        if($polubione_result->fetch_assoc()){
+                            $polubione = true;
+                        }
                         echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
-                            echo '<div class="showcase__products--product-img">';
+                            echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
                                 echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
                             echo '</div>';
-                            echo '<div class="showcase__products--product-text">';
-                                echo '<h4>' . $row['name'] . '</h4>';
-                                echo '<p>' . $row['discount'] . 'zł</p>';
+                            echo '<div class="showcase__products--product-text d-flex flex-column justify-content-end">';
+                                echo '<div class="showcase__products--product-text-name">';
+                                    echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
+                                echo '</div>';
+                                echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
+                                    echo '<p>' . $row['discount'] . 'zł</p>';
+                                    if($polubione){
+                                        echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                    }
+                                    else{
+                                        echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                    }
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                     }
@@ -104,23 +139,10 @@
         </div>  
     </div>
 
-    <!-- SUGGESTED -->
-    <div class="container showcase">
-        <hr class="bg-danger border-2 border-top border-dark">
-        <div class="d-flex justify-content-between">
-            <h1>Polecamy</h1>
-            <a href="#">Zobacz więcej</a>
-        </div>
-        <!-- PRODUCTS -->
-        <div class="">
-            
-        </div>
-    </div>
-
     <!-- NEWS -->
     <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
-        <div class="d-flex justify-content-between">
+        <div class="showcase__text d-flex justify-content-between align-items-center">
             <h1>Aktualności</h1>
             <a href="#">Zobacz więcej</a>
         </div>
@@ -133,13 +155,30 @@
     <!-- TUTORIALS -->
     <div class="container showcase">
         <hr class="bg-danger border-2 border-top border-dark">
-        <div class="d-flex justify-content-between">
+        <div class="showcase__text d-flex justify-content-between align-items-center">
             <h1>Poradniki</h1>
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="">
-            
+        <div class="showcase__products d-flex">
+            <?php 
+                while($row = $discounts_result->fetch_assoc()){
+                    echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
+                        echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
+                            echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
+                        echo '</div>';
+                        echo '<div class="showcase__products--product-text d-flex flex-column justify-content-end">';
+                            echo '<div class="showcase__products--product-text-name">';
+                                echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
+                            echo '</div>';
+                            echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
+                                echo '<p>' . $row['discount'] . 'zł</p>';
+                                echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            ?>
         </div>
     </div>
 

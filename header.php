@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!-- === NAVBAR === -->
 
@@ -54,7 +51,7 @@
                             </li>
                             <li class="nav-item d-flex flex-column align-items-center justify-content-between">
                                 <i class="fa-solid fa-heart navbar-icon"></i>
-                                <a class="nav-link navbar-label" href="#">Twoje polubienia</a>
+                                <a class="nav-link navbar-label" href="polubione.php">Twoje polubienia</a>
                             </li>
                             <li class="nav-item dropdown d-flex flex-column align-items-center justify-content-between">
                                 <i class="fa-solid fa-cart-shopping navbar-icon"></i>

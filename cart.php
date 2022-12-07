@@ -87,7 +87,6 @@
                     <?php
                         if($isSomethingIn['COUNT(id)']==0){
                             echo '<p>Koszyk jest pusty</p>';
-                            echo '<a href="order.php" class="btn btn-success disabled">Zamawiam i płace</a>';
                         }
                         else{
                             echo '<p>Razem: ' . $sum .'zł</p>';
