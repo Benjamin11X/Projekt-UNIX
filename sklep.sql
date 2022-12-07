@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Gru 2022, 12:59
+-- Czas generowania: 07 Gru 2022, 15:55
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -92,6 +92,17 @@ CREATE TABLE `order_details` (
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `order_details`
+--
+
+INSERT INTO `order_details` (`id`, `order_id`, `produkt_id`, `quantity`, `price`) VALUES
+(1, 11, 6, 1, 4099),
+(2, 11, 5, 1, 2699),
+(3, 11, 8, 1, 6599),
+(4, 12, 6, 1, 4099),
+(5, 12, 5, 1, 2699);
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +113,15 @@ CREATE TABLE `payment` (
   `id` int(11) NOT NULL,
   `method` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `payment`
+--
+
+INSERT INTO `payment` (`id`, `method`) VALUES
+(1, 'Płatnośc przy odbiorze'),
+(2, 'Przelew'),
+(3, 'Blik');
 
 -- --------------------------------------------------------
 
@@ -164,29 +184,28 @@ CREATE TABLE `subcategory` (
 --
 
 INSERT INTO `subcategory` (`id`, `category_id`, `subcategory_name`) VALUES
-(1, 1, 'Laptopy'),
-(2, 1, 'Komputery'),
-(3, 2, 'Smartfony'),
-(4, 2, 'Smartwatche'),
-(5, 2, 'Tablety'),
-(6, 2, 'Komórkowe'),
-(7, 3, 'Procesory'),
-(8, 3, 'Karty Graficzne'),
-(9, 3, 'Pamięć RAM'),
-(10, 3, 'Płyty Główne'),
-(11, 3, 'Dyski'),
-(12, 3, 'Obudowy'),
-(13, 3, 'Chłodzenie'),
-(14, 3, 'Zasilacze'),
-(15, 4, 'Drukarki'),
-(16, 4, 'Monitory'),
-(17, 4, 'Mikrofony'),
-(18, 5, 'Telewizory'),
-(19, 5, 'Audio'),
-(20, 6, 'Klawiatury'),
-(21, 6, 'Myszki'),
-(22, 6, 'Słuchawki')
-;
+(1, 1, 'laptopy'),
+(2, 1, 'komputery'),
+(3, 2, 'smartfony'),
+(4, 2, 'smartwatche'),
+(5, 2, 'tablety'),
+(6, 2, 'komórkowe'),
+(7, 3, 'procesory'),
+(8, 3, 'karty_graficzne'),
+(9, 3, 'pamiec_ram'),
+(10, 3, 'plyty_glowne'),
+(11, 3, 'dyski'),
+(12, 3, 'obudowy'),
+(13, 3, 'chlodzenie'),
+(14, 3, 'zasilacze'),
+(15, 4, 'drukarki'),
+(16, 4, 'monitory'),
+(17, 4, 'mikrofony'),
+(18, 5, 'telewizory'),
+(19, 5, 'audio'),
+(20, 6, 'klawiatury'),
+(21, 6, 'myszki'),
+(22, 6, 'sluchawki');
 
 -- --------------------------------------------------------
 
@@ -230,6 +249,17 @@ CREATE TABLE `zamowienie` (
   `kwota_zamowienia` float NOT NULL,
   `payment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+--
+-- Zrzut danych tabeli `zamowienie`
+--
+
+INSERT INTO `zamowienie` (`id`, `client_id`, `delivery_id`, `data`, `kwota_zamowienia`, `payment_id`) VALUES
+(11, 1, 2, '2022-12-07', 13397, 3),
+(12, 1, 2, '2022-12-07', 6798, 3);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -305,7 +335,7 @@ ALTER TABLE `zamowienie`
 -- AUTO_INCREMENT dla tabeli `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `category`
@@ -323,13 +353,13 @@ ALTER TABLE `delivery`
 -- AUTO_INCREMENT dla tabeli `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `product`
@@ -341,7 +371,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT dla tabeli `subcategory`
 --
 ALTER TABLE `subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
@@ -353,7 +383,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `zamowienie`
 --
 ALTER TABLE `zamowienie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -392,6 +422,17 @@ ALTER TABLE `zamowienie`
   ADD CONSTRAINT `zamowienie_ibfk_2` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`),
   ADD CONSTRAINT `zamowienie_ibfk_3` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`id`);
 COMMIT;
+
+
+CREATE TABLE `polubione` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` int(11) NOT NULL,
+  `produkt_id` int(11) NOT NULL
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `polubione`
+  ADD CONSTRAINT FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

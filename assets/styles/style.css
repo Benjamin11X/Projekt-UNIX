@@ -42,12 +42,11 @@ ul {
   transform: scale(1.05);
 }
 
-.showcase a {
+.showcase__text a {
   color: black;
-  padding: 1rem;
   text-decoration: none;
 }
-.showcase a:hover {
+.showcase__text a:hover {
   color: #33adff;
 }
 .showcase__products {
@@ -56,16 +55,63 @@ ul {
 .showcase__products--product {
   height: 450px;
   width: 300px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 .showcase__products--product-img {
   width: 280px;
-  height: 340px;
+  height: 300px;
 }
 .showcase__products--product-img img {
-  max-width: 100%;
-  max-height: 100%;
+  min-width: 100%;
+  min-height: auto;
 }
+.showcase__products--product-text {
+  height: 150px;
+  width: 100%;
+}
+.showcase__products--product-text-name {
+  height: 90px;
+  padding: 15px;
+  overflow: hidden;
+}
+.showcase__products--product-text-name a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1.5rem;
+}
+.showcase__products--product-text-priceAndLinks {
+  height: 60px;
+  padding: 0 15px;
+}
+.showcase__products--product-text-priceAndLinks p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.showcase__products--product-text-priceAndLinks a {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  position: relative;
+}
+.showcase__products--product-text-priceAndLinks a i {
+  position: absolute;
+  font-size: 28px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .produkty__kartaProduktu {
   width: 280px;
   height: 340px;
@@ -108,6 +154,36 @@ ul {
   width: 80%;
   margin: 0 0.5rem;
   border-radius: 5px;
+}
+
+.polubione__product {
+  min-height: 8rem;
+}
+.polubione__product--image {
+  width: 8rem;
+  min-height: 8rem;
+  margin: 0 25px 0 0;
+}
+.polubione__product--image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.polubione__product--info a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1.5rem;
+  padding: 20px 0 0 0;
+}
+.polubione__product--info-price {
+  padding: 0 0 20px 0;
+}
+.polubione__product--info-price p {
+  margin: 0 0 0 10px;
+  font-size: 1.3rem;
+}
+.polubione__product--info-price del {
+  font-size: 1.2rem;
+  color: #969696;
 }
 
 .cart__products--product {
