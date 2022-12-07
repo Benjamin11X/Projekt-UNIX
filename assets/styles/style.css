@@ -181,6 +181,18 @@ ul {
   padding: 20px;
 }
 
+.orderShowcase__order--details {
+  height: 8rem;
+}
+.orderShowcase__order--details-image {
+  height: 8rem;
+  width: 8rem;
+}
+.orderShowcase__order--details-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .register-form-container {
   min-height: 100vh;
 }
