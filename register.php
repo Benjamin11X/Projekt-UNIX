@@ -2,6 +2,9 @@
 session_start();
 
 if (isset($_POST['email'])){
+
+    $imie = $_POST['fname'];
+    $nazwisko = $_POST['lname'];
    
     //Udana walidacja
     $correct = true;
@@ -42,7 +45,10 @@ if (isset($_POST['email'])){
         $_SESSION['e_haslo'] = 'Podane hasła nie są identyczne';
     }
 
-    $haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
+
+    
+
+    
     
 
     require_once "connect.php";
@@ -65,17 +71,36 @@ if (isset($_POST['email'])){
                 $_SESSION['e_email'] = 'Istnieje już konto przypisane do tego adresu e-mail!';
             }
 
+            //Czy nick juz istnieje?
+            $rezultat = $polaczenie->query("SELECT id FROM user WHERE login='$nickname'");
+
+            if (!$rezultat) throw new Exception($polaczenie->error);
+            $ile_takich_nickow = $rezultat->num_rows;
+            if($ile_takich_nickow){
+                $correct = false;
+                $_SESSION['e_nick'] = 'Istnieje już konto przypisane do tego nicku. Wybierz inny';
+            }
+
+            if ($correct == true){
+                
+                if($polaczenie->query("INSERT INTO user VALUSE (NULL,'$email','$nickname','$haslo1','0','$imie','$nazwisko','','','','')")){
+                    $_SESSION['udanarejestracja'] = true;
+                    header('Location: welcome.php');
+                }
+                else {
+                    throw new Exception($polaczenie->error);
+                }
+            }
+
             $polaczenie->close();
         }
     }
     catch(Exception $e) {
         echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o rejestracje w innym terminie </span>';
+        echo '<br/>Develop infromation:' . $e;
     }
 
-    if ($correct == true){
-        echo "Udana walidacja!";
-        exit();
-    }
+   
 }
 
 ?>
