@@ -41,6 +41,9 @@
                                         echo '<li><a class="dropdown-item" href="account.php">Twoje konto</a></li>
                                                 <li><a class="dropdown-item" href="orders.php">Zamówienia</a></li>
                                                 <li><a class="dropdown-item" href="logout.php">Wyloguj się</a></li>';
+                                                if($_SESSION['admin']==1){
+                                                    echo '<li><a class="dropdown-item" href="menagment.php">Zarządzanie danymi</a></li>';
+                                                }
                                     }
                                     else {
                                         echo '<li><a class="dropdown-item" href="login.php">Zaloguj się</a></li>
@@ -51,7 +54,15 @@
                             </li>
                             <li class="nav-item d-flex flex-column align-items-center justify-content-between">
                                 <i class="fa-solid fa-heart navbar-icon"></i>
-                                <a class="nav-link navbar-label" href="polubione.php">Twoje polubienia</a>
+                                <?php
+                                    if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                                        echo '<a class="nav-link navbar-label" href="polubione.php">Twoje polubienia</a>';
+                                    }
+                                    else {
+                                        echo '<a class="nav-link navbar-label" href="login.php">Twoje polubienia</a>';
+                                    }
+                                    ?>
+                                
                             </li>
                             <li class="nav-item dropdown d-flex flex-column align-items-center justify-content-between">
                                 <i class="fa-solid fa-cart-shopping navbar-icon"></i>

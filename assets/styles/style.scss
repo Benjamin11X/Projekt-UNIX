@@ -1,3 +1,4 @@
+// ===== GLOBAL ===== //
 ul {
   list-style: none;
 }
@@ -15,7 +16,7 @@ ul {
   height: 2.75rem;
 }
 
-//=== NAVBAR ===
+//===== HEADER ===== //
 .navbar-icon {
   font-size: 1.75rem;
 }
@@ -43,7 +44,32 @@ ul {
   transform: scale(1.05);
 }
 
-//===== INDEX - PRODUCTS =====//
+// ===== FOOTER ===== //
+.footer {
+  &__links {
+    &--category {
+      width: 12rem;
+      a {
+        text-decoration: none;
+        color: #212529;
+      }
+      a:hover {
+        color: #33adff;
+      }
+      i {
+        padding-top: 5px;
+      }
+      i:hover {
+        color: #33adff;
+      }
+      p:hover {
+        color: #33adff;
+      }
+    }
+  }
+}
+
+//===== INDEX =====//
 .showcase {
   &__text {
     a {
@@ -114,9 +140,36 @@ ul {
   }
 }
 
-// ===== PRODUKTY ===== //
+.newsletter {
+  &--tab {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &-text {
+      width: 60%;
+      padding: 1rem;
+      input {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        text-align: center;
+      }
+    }
+    &-icon {
+      width: 40%;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      padding: 1rem;
+      i {
+        font-size: 7rem;
+      }
+    }
+  }
+}
 
-// === PRODUKTY - CONTAINER === //
+// ===== PRODUKTY ===== //
 .produkty {
   &__text {
     a {
@@ -325,6 +378,9 @@ ul {
 // ===== ORDER SHOWCASE ===== //
 .orderShowcase {
   &__order {
+    p {
+      margin: 0 0 7px 0;
+    }
     &--idAndDate {
       p {
         margin: 0;
@@ -335,9 +391,20 @@ ul {
       &-image {
         height: 8rem;
         width: 8rem;
+        margin: 0 1.5rem 0 0;
         img {
           max-width: 100%;
           max-height: 100%;
+        }
+      }
+      &-info {
+        a {
+          text-decoration: none;
+          color: #212529;
+          font-size: 1.25rem;
+        }
+        p {
+          margin: 0;
         }
       }
     }
@@ -391,35 +458,6 @@ ul {
   }
 }
 
-.newsletter {
-  &--tab {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    &-text {
-      width: 60%;
-      padding: 1rem;
-      input {
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        text-align: center;
-      }
-    }
-    &-icon {
-      width: 40%;
-      display: flex;
-      justify-content: right;
-      align-items: center;
-      padding: 1rem;
-      i {
-        font-size: 7rem;
-      }
-    }
-  }
-}
-
 // ===== ACCOUNT ===== //
 .account {
   &__info {
@@ -430,31 +468,6 @@ ul {
   }
   &__links {
     width: 30%;
-  }
-}
-
-// ===== FOOTER ===== //
-.footer {
-  &__links {
-    &--category {
-      width: 12rem;
-      a {
-        text-decoration: none;
-        color: #212529;
-      }
-      a:hover {
-        color: #33adff;
-      }
-      i {
-        padding-top: 5px;
-      }
-      i:hover {
-        color: #33adff;
-      }
-      p:hover {
-        color: #33adff;
-      }
-    }
   }
 }
 
@@ -477,6 +490,17 @@ ul {
   &__form {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
+  }
+}
+
+// ===== MENAGMENT ===== //
+.menagment {
+  &__tab {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #c6c7c8;
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 

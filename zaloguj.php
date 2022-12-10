@@ -24,6 +24,7 @@ else{
             $_SESSION['id'] = $wiersz['id'];
             $_SESSION['user'] = $wiersz['login'];
             $_SESSION['e-mail'] = $wiersz['e-mail'];
+            $_SESSION['admin'] = $wiersz['admin'];
             $_SESSION['imie'] = $wiersz['imie']; 
             $_SESSION['nazwisko'] = $wiersz['nazwisko']; 
             $_SESSION['miasto'] = $wiersz['miasto']; 

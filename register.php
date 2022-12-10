@@ -83,7 +83,7 @@ if (isset($_POST['email'])){
 
             if ($correct == true){
                 
-                if($polaczenie->query("INSERT INTO user VALUSE (NULL,'$email','$nickname','$haslo1','0','$imie','$nazwisko','','','','')")){
+                if($polaczenie->query("INSERT INTO user VALUES (DEFAULT,'$email','$nickname','$haslo1','0','$imie','$nazwisko','','','','')")){
                     $_SESSION['udanarejestracja'] = true;
                     header('Location: welcome.php');
                 }

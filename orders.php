@@ -40,22 +40,25 @@
                             echo '<p>Data zamówienia: ' . $row['data'] . '</p>';
                         echo '</div>';
                         echo '<hr class="bg-danger border-1 border-top border-dark my-1">';
-                        echo '<p><bold>Sposób dostawy:</bold> ' . $row['name'] . '</p>';
-                        echo '<p><bold>Rodzaj płatności:</bold> ' . $row['method'] . '</p>';
+                        echo '<p><b>Sposób dostawy:</b> ' . $row['name'] . '</p>';
+                        echo '<p><b>Rodzaj płatności:</b> ' . $row['method'] . '</p>';
+                        echo '<hr class="bg-danger border-1 border-top border-dark my-1">';
                         $orderDetails_sql = "SELECT order_details.order_id, product.name, product.picture_url, order_details.quantity, order_details.price FROM order_details INNER JOIN product ON order_details.produkt_id = product.id WHERE order_details.order_id=" . $row['id'] . "";
                         $orderDetails_result = $connection->query($orderDetails_sql);
                         while($row1 = $orderDetails_result->fetch_assoc()){
                             echo '<div class="orderShowcase__order--details d-flex">';
-                                echo '<div class="orderShowcase__order--details-image">';
+                                echo '<div class="orderShowcase__order--details-image d-flex align-items-center">';
                                     echo '<img src='. $row1['picture_url'] .'>';
                                 echo '</div>';
-                                echo '<div class="orderShowcase__order--details-info">';
+                                echo '<div class="orderShowcase__order--details-info d-flex flex-column justify-content-between py-3">';
                                     echo '<a href="#">' . $row1['name'] . '</a>';
                                     echo '<p>Ilość: ' . $row1['quantity'] . '</p>';
                                     echo '<p>Cena: ' . $row1['price'] . '</p>';
                                 echo '</div>';
                             echo '</div>';
                         }
+                        echo '<hr class="bg-danger border-1 border-top border-dark my-1">';
+                        echo '<p><b>Razem: </b>' . $row['kwota_zamowienia'] . 'zł</p>';
                     echo '</div>';
                     echo '<hr class="bg-danger border-2 border-top border-dark">';
                 }
