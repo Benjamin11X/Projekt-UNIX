@@ -65,11 +65,14 @@
                 <?php 
                     while($row = $bestsellers_result->fetch_assoc()){
                         $polubione = false;
-                        $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
-                        $polubione_result = $connection->query($polubione_sql);
-                        if($polubione_result->fetch_assoc()){
-                            $polubione = true;
+                        if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                            $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
+                            $polubione_result = $connection->query($polubione_sql);
+                            if($polubione_result->fetch_assoc()){
+                                $polubione = true;
+                            }
                         }
+
                         echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
                             echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
                                 echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
@@ -88,11 +91,16 @@
                                     else{
                                         echo '<p>' . $row['price'] .'zł</p>';
                                     }
-                                    if($polubione){
-                                        echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                    if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                                        if($polubione){
+                                            echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                        }
+                                        else{
+                                            echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                        }
                                     }
                                     else{
-                                        echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                        echo '<a class="btn btn-success" href="login.php"><i class="fa-regular fa-heart"></i></a>';
                                     }
                                 echo '</div>';
                             echo '</div>';
@@ -117,11 +125,14 @@
                 <?php 
                     while($row = $discounts_result->fetch_assoc()){
                         $polubione = false;
-                        $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
-                        $polubione_result = $connection->query($polubione_sql);
-                        if($polubione_result->fetch_assoc()){
-                            $polubione = true;
+                        if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                            $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
+                            $polubione_result = $connection->query($polubione_sql);
+                            if($polubione_result->fetch_assoc()){
+                                $polubione = true;
+                            }
                         }
+                        
                         echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
                             echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
                                 echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
@@ -140,11 +151,17 @@
                                     else{
                                         echo '<p>' . $row['price'] .'zł</p>';
                                     }
-                                    if($polubione){
-                                        echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                    
+                                    if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
+                                        if($polubione){
+                                            echo '<a class="btn btn-success" href="odpolubienie.php?id=' . $row['id'] .'"><i class="fa-solid fa-heart"></i></a>';
+                                        }
+                                        else{
+                                            echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                        }
                                     }
                                     else{
-                                        echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
+                                        echo '<a class="btn btn-success" href="login.php"><i class="fa-regular fa-heart"></i></a>';
                                     }
                                 echo '</div>';
                             echo '</div>';

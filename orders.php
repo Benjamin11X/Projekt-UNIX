@@ -34,13 +34,14 @@
         <div class="container-lg orderShowcase">
             <?php
                 while($row = $orders_result->fetch_assoc()){
-                    echo '<div class="orderShowcase__order container-fluid">';
-                        echo '<div class="d-flex justify-content-between">';
+                    echo '<div class="orderShowcase__order container-fluid my-4">';
+                        echo '<div class="orderShowcase__order--idAndDate d-flex justify-content-between">';
                             echo '<p>Id: ' . $row['id'] . '</p>';
                             echo '<p>Data zamówienia: ' . $row['data'] . '</p>';
                         echo '</div>';
-                        echo '<p>Sposób dostawy: ' . $row['name'] . '</p>';
-                        echo '<p>Rodzaj płatności: ' . $row['method'] . '</p>';
+                        echo '<hr class="bg-danger border-1 border-top border-dark my-1">';
+                        echo '<p><bold>Sposób dostawy:</bold> ' . $row['name'] . '</p>';
+                        echo '<p><bold>Rodzaj płatności:</bold> ' . $row['method'] . '</p>';
                         $orderDetails_sql = "SELECT order_details.order_id, product.name, product.picture_url, order_details.quantity, order_details.price FROM order_details INNER JOIN product ON order_details.produkt_id = product.id WHERE order_details.order_id=" . $row['id'] . "";
                         $orderDetails_result = $connection->query($orderDetails_sql);
                         while($row1 = $orderDetails_result->fetch_assoc()){

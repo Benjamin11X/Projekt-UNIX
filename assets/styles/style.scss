@@ -325,6 +325,11 @@ ul {
 // ===== ORDER SHOWCASE ===== //
 .orderShowcase {
   &__order {
+    &--idAndDate {
+      p {
+        margin: 0;
+      }
+    }
     &--details {
       height: 8rem;
       &-image {
@@ -506,38 +511,35 @@ ul {
   }
 }
 
-#btn-left{
+#btn-left {
   background-color: #fff;
   border-radius: 5px;
   border: outset;
 }
-#btn-right{
+#btn-right {
   background-color: #fff;
   border-radius: 5px;
   border: outset;
 }
-#btn-right:hover{
+#btn-right:hover {
   background-color: #f8f9fa;
 }
-#btn-left:hover{
+#btn-left:hover {
   background-color: #f8f9fa;
 }
 
-#btn-left:active{
+#btn-left:active {
   background-color: #c6c7c8;
 }
-#btn-right:active{
+#btn-right:active {
   background-color: #c6c7c8;
 }
 
-
-
-
-@media (min-width:1450px) {
-  #btn-left{
+@media (min-width: 1450px) {
+  #btn-left {
     display: none;
   }
-  #btn-right{
+  #btn-right {
     display: none;
   }
 }
