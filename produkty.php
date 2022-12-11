@@ -2,7 +2,7 @@
     session_start();
     include 'connect.php';
 
-    $searchProducts_sql = "SELECT id, name, price, discount, picture_url FROM product WHERE ";
+    $searchProducts_sql = "SELECT id, name, price, discount, picture_url FROM product";
     $subkategorie = array("komputery","laptopy",
         "smartfony","smartwatche","tablety","komorkowe","procesory",
         "karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy",
@@ -19,17 +19,42 @@
         $x = 0;
         foreach($filtrs_filtr as $val){
             $x++;
+            if($x == 1){
+                $searchProducts_sql .= " WHERE (subcategory_id=" . $val . " OR ";
+            }
             if(count($filtrs_filtr)>$x){
                 $searchProducts_sql .= "subcategory_id=" . $val . " OR ";
             }else{
-                $searchProducts_sql .= "subcategory_id=" . $val;
+                $searchProducts_sql .= "subcategory_id=" . $val . ") ";
             }
         }
 
+        if((isset($_POST['min']) || isset($_POST['max'])) && strpos($searchProducts_sql, "subcategory_id") != NULL){
+            if(isset($_POST['min']) && isset($_POST['max']) && $_POST['min']!=NULL && $_POST['max']!=NULL){
+                $searchProducts_sql .= " AND (price>" . $_POST['min'] . " AND price<" . $_POST['max'] . ")";
+            }
+            else if(isset($_POST['max']) && $_POST['max']!=NULL){
+                $searchProducts_sql .= " AND price<" . $_POST['max'] . "";
+            }
+            else if(isset($_POST['min']) && $_POST['min']!=NULL){
+                $searchProducts_sql .= " AND price>" . $_POST['min'] . "";
+            }
+        }
+        else if((isset($_POST['min']) || isset($_POST['max']))){
+            if(isset($_POST['min']) && isset($_POST['max']) && $_POST['min']!=NULL && $_POST['max']!=NULL){
+                $searchProducts_sql .= " WHERE (price>" . $_POST['min'] . " AND price<" . $_POST['max'] . ")";
+            }
+            else if(isset($_POST['max']) && $_POST['max']!=NULL){
+                $searchProducts_sql .= " WHERE price<" . $_POST['max'] . "";
+            }
+            else if(isset($_POST['min']) && $_POST['min']!=NULL){
+                $searchProducts_sql .= " WHERE price>" . $_POST['min'] . "";
+            }
+        }
         $searchProducts_result = $connection->query($searchProducts_sql);
 
     }else if($_GET['kategoria']){
-        $searchProducts_sql .= " subcategory_id=" . $_GET['kategoria'];
+        $searchProducts_sql .= " WHERE subcategory_id=" . $_GET['kategoria'];
 
         $searchProducts_result = $connection->query($searchProducts_sql);
     }
@@ -66,7 +91,26 @@
             <div class="container-fluid filtrbar">
                 <form class="filtrbar__filtr d-flex flex-column-reverse my-4" method="post">
                 <div class="container-fluid d-flex flex-wrap">
-                    
+                    <div class="d-flex w-50">
+                        <div>
+                            <label for="min">Cena minimalna</label>
+                            <input type="number" name="min" id="min">
+                        </div>
+                        <p> - </p>
+                        <div>
+                            <label for="max">Cena maksymalna</label>
+                            <input type="number" name="max" id="max">
+                        </div>
+                    </div>
+                    <div class="d-flex w-50">
+                        <label for="count">Wyswietlane produkty: </label>
+                        <select class="form-select" name="count" id="count">
+                            <option selected>Wybierz ilość</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="container-fluid d-flex flex-wrap  mt-4">
                     <ul class="filtrbar__filtr__kategoria mb-1">
@@ -217,7 +261,13 @@
                         <!-- WYŚWIETLENIE PRODUKTÓW -->
                         
                     <?php
+                    $x = 0;
                     while($row = $searchProducts_result->fetch_assoc()){
+                        if(isset($_POST['count'])){
+                            if($x == $_POST['count']){
+                                break;
+                            }
+                        }
                         $polubione = false;
                         if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
                             $polubione_sql = "SELECT produkt_id FROM polubione WHERE produkt_id=" . $row['id'] . " AND user_id=" . $_SESSION['id'] . "";
@@ -258,6 +308,7 @@
                                 echo '</div>';
                             echo '</div>';
                         echo '</div>';
+                        $x++;
                     }
                     ?>
                 </div>
