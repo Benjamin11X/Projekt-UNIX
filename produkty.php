@@ -65,6 +65,9 @@
         <div class="container-lg">
             <div class="container-fluid filtrbar">
                 <form class="filtrbar__filtr d-flex flex-column-reverse my-4" method="post">
+                <div class="container-fluid d-flex flex-wrap">
+                    
+                </div>
                 <div class="container-fluid d-flex flex-wrap  mt-4">
                     <ul class="filtrbar__filtr__kategoria mb-1">
                         <li>
