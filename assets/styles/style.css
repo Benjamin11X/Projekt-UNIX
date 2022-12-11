@@ -461,6 +461,14 @@ ul {
 }
 .account__links {
   width: 30%;
+  border: solid 2px #c6c7c8;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.account__links--products a {
+  text-decoration: none;
+  color: #212529;
 }
 
 .kontakt__info__card {
@@ -625,4 +633,75 @@ ul {
   .login-form-container__content__info-row p {
     text-align: center;
   }
+}
+.banner {
+  height: 100vh;
+  width: 100%;
+  background: url("assets/images/welcomepage/overlay.png"), url("assets/images/welcomepage/banner.jpg");
+  background-position: center;
+  -moz-background-size: cover;
+       background-size: cover;
+  /*background-attachment: fixed;*/
+  background-repeat: no-repeat;
+}
+
+.banner .navbar {
+  margin-top: 4%;
+}
+
+.banner .navbar-brand {
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-left: 10%;
+}
+
+.banner .nav {
+  margin-right: 10%;
+}
+
+.banner .nav li a {
+  color: #aaa;
+  font-size: 1.2em;
+}
+
+.banner .info {
+  margin-top: 15%;
+  -webkit-transform: translateY(-15%);
+     -moz-transform: translateY(-15%);
+      -ms-transform: translateY(-15%);
+       -o-transform: translateY(-15%);
+          transform: translateY(-15%);
+}
+
+.banner .info h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.banner .info p {
+  font-size: 2em;
+  font-weight: 500;
+  color: #aaa;
+  letter-spacing: 2px;
+}
+
+.banner .info a {
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  background: #e91d43;
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.banner .info a:hover {
+  background: #e91e63;
 }/*# sourceMappingURL=style.css.map */
