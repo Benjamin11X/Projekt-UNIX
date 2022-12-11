@@ -37,7 +37,7 @@
             $connection->query($user_data_update_sql);
         }
         if(isset($_POST['city']) && $_POST['city']!=NULL){
-            $user_data_update_sql = "UPDATE user SET city='" . $_POST['miasto'] . "'";
+            $user_data_update_sql = "UPDATE user SET miasto='" . $_POST['city'] . "'";
             $connection->query($user_data_update_sql);
         }
         if(isset($_POST['postcode']) && $_POST['postcode']!=NULL){

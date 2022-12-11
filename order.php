@@ -11,6 +11,10 @@
     $deliveryMethod_sql = "SELECT * FROM delivery";
     $deliveryMethod_result = $connection->query($deliveryMethod_sql);
 
+    $user_data_sql = "SELECT * FROM user WHERE id=" . $_SESSION['id'] . "";
+    $user_data_result = $connection->query($user_data_sql);
+    $user_data = $user_data_result->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -67,10 +71,16 @@
             </div>
             <div class="order__summary">
                 <!-- PHP -->
-                <form method="post" action="order_release.php" class="cart__summary--content">
-                    <label for="deliveryMethod my-1">Dostawa</label>
-                    <select class="form-select mb-4" name="deliveryMethod">
-                        <?php
+                <?php
+                    if($user_data['imie'] == NULL || $user_data['nazwisko'] == NULL || $user_data['miasto'] == NULL || $user_data['kod_pocztowy']==NULL || $user_data['ulica'] == NULL || $user_data['nr_domu']==NULL){
+                        echo '<h4>Upsss</h4>';
+                        echo '<p>Wygląda na to że dane wymagane do zamówienia nie są uzupełnione</p>';
+                        echo '<a class="btn btn-primary" href="account.php">Ustaw wymagane dane</a>';
+                    }
+                    else{
+                        echo '<form method="post" action="order_release.php" class="cart__summary--content">';
+                            echo '<label for="deliveryMethod my-1">Dostawa</label>';
+                            echo '<select class="form-select mb-4" name="deliveryMethod">';
                             while($row = $deliveryMethod_result->fetch_assoc()){
                                 $temp = 0;
                                 if($temp == 0){
@@ -81,12 +91,9 @@
                                 }
                                 $temp++;
                             }
-                        ?>
-                    </select>
-
-                    <label for="paymentMethod my-1">Płatność</label>
-                    <select class="form-select mb-4" name="paymentMethod" id="paymentMethod">
-                        <?php
+                            echo '</select>';
+                            echo '<label for="paymentMethod my-1">Płatność</label>';
+                            echo '<select class="form-select mb-4" name="paymentMethod" id="paymentMethod">';
                             while($row = $paymentMethod_result->fetch_assoc()){
                                 $temp = 0;
                                 if($temp == 0){
@@ -97,14 +104,14 @@
                                 }
                                 $temp++;
                             }
-                        ?>
-                    </select>
-                    
-                    <label for="sum">Razem:</label>
-                    <input class="mb-4" type="text" name="sum" id="sum" value="<?php echo $sum; ?>" readonly>
+                            echo '</select>';
 
-                    <input type="submit" class="btn btn-success" value="Dokonaj zamówienia"></input>
-                </form>
+                            echo '<label for="sum">Razem:</label>';
+                            echo '<input class="mb-4" type="text" name="sum" id="sum" value="' . $sum  . '" readonly>';
+                            echo '<input type="submit" class="btn btn-success" value="Dokonaj zamówienia"></input>';
+                        echo '</form>';
+                    }
+                ?>
                 <!-- END OF PHP -->
             </div>
         </div>
