@@ -16,7 +16,7 @@
     }
     else if(isset($_POST['del_button'])){
         // USUWANIE PRODUKTU
-        $product_del_sql = "DELETE FROM product WHERE id=" . $_GET['prod'] . "";
+        $product_del_sql = "DELETE FROM product WHERE id=" . $_POST['product'] . "";
         $connection->query($product_del_sql);
         header('Location: product_menagment.php');
     }
@@ -94,6 +94,68 @@
     }
     else if(isset($_POST['edit_product'])){
         //EDYTOWANIE PRODUKU PRODUKTU
+        if(empty($_POST['name']) || empty($_POST['desc']) || empty($_POST['price']) || empty($_FILES['photos'])){
+            if(empty($_POST['name'])){
+                echo "Podaj nazwe produktu <br>";
+            }
+            if(empty($_POST['desc'])){
+                echo "Podaj opis produktu <br>";
+            }
+            if(empty($_POST['price'])){
+                echo "Podaj opis produktu <br>";
+            }
+            if(empty($_POST['photos'])){
+                echo "Podaj zdjecia produktu <br>";
+            }
+        }
+        else{
+            if($_FILES['photos']['error'] != 0){
+                switch($_FILES['photos']['error']){
+                    case 3:
+                        echo "Plik wysłany tylko częściowo";
+                        break;
+                    case 4:
+                        echo "Plik nie został wysłany";
+                        break;
+                    case 2:
+                        echo "Wysłany plik jest za duży";
+                        break;
+                    default:
+                        echo "Nieznany błąd wysyłania";
+                        break;
+                }
+            }
+            else if($_FILES['photos']['type'] !== "image/webp"){
+                echo "Podany plik ma nieprawidlowy format";
+            }
+            else{
+                $subfolderName_sql = "SELECT subcategory_name FROM subcategory WHERE id=" . $_POST['subcategory'] . "";
+                $subfolderName_result = $connection->query($subfolderName_sql);
+                $subfolderName = $subfolderName_result->fetch_assoc();
+
+                $filename = $_FILES['photos']['name'];
+
+                $destiny = __DIR__ . "/assets/images/" . $subfolderName['subcategory_name'] . "/" . $filename; 
+
+                $x = 1;
+
+                while(file_exists($destiny)){
+                    $filename = "($x)" . $filename;
+                    $destiny = __DIR__ . "/assets/images/" . $subfolderName['subcategory_name'] . "/" . $filename; 
+                    $x++; 
+                }
+
+                if(!(move_uploaded_file($_FILES['photos']['tmp_name'], $destiny))){
+                    echo "Wysyłanie się nie powiodło";
+                }
+            }
+        }
+        $destiny_sql = explode("Projekt_Bozy/", $destiny);
+
+        $product_edit_sql = "UPDATE product SET 
+            name='" . $_POST['name'] ."', subcategory_id='" . $_POST['subcategory'] . "', description='" . $_POST['desc'] . "', price='" . $_POST['disc'] . "', picture_url='" . $destiny_sql[1] . "'";
+        $connection->query($product_edit_sql);
+        header('Location: product_menagment.php');
     }
     else if(isset($_POST['cancel_edit_product'])){
         header('Location: product_menagment.php');
@@ -208,16 +270,26 @@
                     }
                     else if($_GET['id']==0){
                         // EDIT FORM
+                        $product_data_sql = "SELECT * FROM product WHERE id=" . $_GET['prod'] . "";
+                        $product_data_result = $connection->query($product_data_sql);
+                        $product_data = $product_data_result->fetch_assoc();
+
                         echo '<form action="" method="post" enctype="multipart/form-data">';
                             echo '<div class="mb-3">';
                                 echo '<label for="name" class="form-label">Nazwa produktu:</label>';
-                                echo '<input type="text" class="form-control" id="name" name="name">';
+                                if(isset($_POST['name'])){
+                                    echo '<input type="text" class="form-control" id="name" name="name" value="' . $_POST['name'] . '">';
+                                }
+                                else{
+                                    echo '<input type="text" class="form-control" id="name" name="name" value="' . $product_data['name'] . '">';
+                                }
+                                
                             echo '</div>';
                             echo '<div class="mb-3">';
                                 echo '<label for="subcategory" class="form-label">Kategoria produktu:</label>';
                                 echo '<select class="form-select" name="subcategory" id="subcategory">';
                                 while($row = $kategoria_result->fetch_assoc()){
-                                    if($row['id'] == 1){
+                                    if($row['id'] == $product_data['subcategory_id']){
                                         echo '<option value="' . $row['id'] . '" selected>' . $row['subcategory_name'] . '</option>';
                                     }else{
                                         echo '<option value="' . $row['id'] . '">' . $row['subcategory_name'] . '</option>';
@@ -227,15 +299,31 @@
                             echo '</div>';
                             echo '<div class="mb-3">';
                                 echo '<label for="desc" class="form-label">Opis:</label>';
-                                echo '<input type="text" class="form-control" id="desc" name="desc">';
+                                if(isset($_POST['desc'])){
+                                    echo '<input type="text" class="form-control" id="desc" name="desc" value="' . $_POST['desc'] . '">';
+                                }
+                                else{
+                                    echo '<input type="text" class="form-control" id="desc" name="desc" value="' . $product_data['description'] . '">';
+                                }
+                                
                             echo '</div>';
                             echo '<div class="mb-3">';
                                 echo '<label for="price" class="form-label">Cena:</label>';
-                                echo '<input type="number" class="form-control" id="price" name="price">';
+                                if(isset($_POST['price'])){
+                                    echo '<input type="number" class="form-control" id="price" name="price" value="' . $_POST['price'] .'">';
+                                }
+                                else{
+                                    echo '<input type="number" class="form-control" id="price" name="price" value="' . $product_data['price'] . '">';
+                                }    
                             echo '</div>';
                             echo '<div class="mb-3">';
                                 echo '<label for="disc" class="form-label">Cena promocyjna:</label>';
-                                echo '<input type="number" class="form-control" id="disc" name="disc">';
+                                if(isset($_POST['disc'])){
+                                    echo '<input type="number" class="form-control" id="disc" name="disc" value="' . $_POST['disc'] .'">';
+                                }
+                                else{
+                                    echo '<input type="number" class="form-control" id="disc" name="disc" value="' . $product_data['discount'] . '">';
+                                }    
                             echo '</div>';
                             echo '<div class="mb-3">';
                                 echo '<label for="photos" class="form-label">Zdjęcia produktu:</label>';
