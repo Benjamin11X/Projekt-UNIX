@@ -97,7 +97,7 @@ if (isset($_POST['email'])){
     }
     catch(Exception $e) {
         echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o rejestracje w innym terminie </span>';
-        echo '<br/>Develop infromation:' . $e;
+        //echo '<br/>Develop infromation:' . $e;
     }
 
    
