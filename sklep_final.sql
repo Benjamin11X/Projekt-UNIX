@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Gru 2022, 15:55
+-- Czas generowania: 11 Gru 2022, 21:22
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -34,6 +34,14 @@ CREATE TABLE `cart` (
   `quantity` int(11) NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `cart`
+--
+
+INSERT INTO `cart` (`id`, `client_id`, `product_id`, `quantity`, `price`) VALUES
+(10, 1, 9, 1, 4549),
+(11, 3, 18, 1, 1299);
 
 -- --------------------------------------------------------
 
@@ -101,7 +109,9 @@ INSERT INTO `order_details` (`id`, `order_id`, `produkt_id`, `quantity`, `price`
 (2, 11, 5, 1, 2699),
 (3, 11, 8, 1, 6599),
 (4, 12, 6, 1, 4099),
-(5, 12, 5, 1, 2699);
+(5, 12, 5, 1, 2699),
+(6, 13, 5, 1, 2699),
+(7, 14, 19, 1, 2499);
 
 -- --------------------------------------------------------
 
@@ -122,6 +132,27 @@ INSERT INTO `payment` (`id`, `method`) VALUES
 (1, 'Płatnośc przy odbiorze'),
 (2, 'Przelew'),
 (3, 'Blik');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `polubione`
+--
+
+CREATE TABLE `polubione` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `produkt_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `polubione`
+--
+
+INSERT INTO `polubione` (`id`, `user_id`, `produkt_id`) VALUES
+(2, 1, 6),
+(4, 1, 12),
+(6, 1, 19);
 
 -- --------------------------------------------------------
 
@@ -215,7 +246,7 @@ INSERT INTO `subcategory` (`id`, `category_id`, `subcategory_name`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `e-mail` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `login` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `admin` int(11) NOT NULL DEFAULT 0,
@@ -231,9 +262,10 @@ CREATE TABLE `user` (
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`id`, `e-mail`, `login`, `password`, `admin`, `imie`, `nazwisko`, `miasto`, `kod_pocztowy`, `ulica`, `nr_domu`) VALUES
-(1, 'admin@sklep.pl', 'admin', 'zaq12wsx', 1, 'Antony', 'Montana', NULL, NULL, NULL, NULL),
-(2, 'klient1@gmail.com', 'klient1', 'xsw21qaz', 0, 'Jakub', 'Marczak', NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `email`, `login`, `password`, `admin`, `imie`, `nazwisko`, `miasto`, `kod_pocztowy`, `ulica`, `nr_domu`) VALUES
+(1, 'admin@sklep.pl', 'admin', 'zaq12wsx', 1, 'Antony', 'Montana', 'Siedlce', '08-110', 'Testowa', '10'),
+(2, 'admin@sklep.pl', 'admin', 'xsw21qaz', 0, 'Antony', 'Montana', 'Siedlce', '08-110', 'Testowa', '10'),
+(3, 'kondashondas@gmail.com', 'benjamin', 'zaq12wsx', 0, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -250,16 +282,15 @@ CREATE TABLE `zamowienie` (
   `payment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-
-
 --
 -- Zrzut danych tabeli `zamowienie`
 --
 
 INSERT INTO `zamowienie` (`id`, `client_id`, `delivery_id`, `data`, `kwota_zamowienia`, `payment_id`) VALUES
 (11, 1, 2, '2022-12-07', 13397, 3),
-(12, 1, 2, '2022-12-07', 6798, 3);
+(12, 1, 2, '2022-12-07', 6798, 3),
+(13, 1, 2, '2022-12-07', 2699, 3),
+(14, 1, 1, '2022-12-10', 2499, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -299,6 +330,13 @@ ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `polubione`
+--
+ALTER TABLE `polubione`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indeksy dla tabeli `product`
 --
 ALTER TABLE `product`
@@ -335,7 +373,7 @@ ALTER TABLE `zamowienie`
 -- AUTO_INCREMENT dla tabeli `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `category`
@@ -353,7 +391,7 @@ ALTER TABLE `delivery`
 -- AUTO_INCREMENT dla tabeli `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `payment`
@@ -362,10 +400,16 @@ ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT dla tabeli `polubione`
+--
+ALTER TABLE `polubione`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT dla tabeli `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT dla tabeli `subcategory`
@@ -377,13 +421,13 @@ ALTER TABLE `subcategory`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `zamowienie`
 --
 ALTER TABLE `zamowienie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -401,6 +445,12 @@ ALTER TABLE `cart`
 ALTER TABLE `order_details`
   ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`produkt_id`) REFERENCES `product` (`id`),
   ADD CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `zamowienie` (`id`);
+
+--
+-- Ograniczenia dla tabeli `polubione`
+--
+ALTER TABLE `polubione`
+  ADD CONSTRAINT `polubione_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Ograniczenia dla tabeli `product`
@@ -422,17 +472,6 @@ ALTER TABLE `zamowienie`
   ADD CONSTRAINT `zamowienie_ibfk_2` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`),
   ADD CONSTRAINT `zamowienie_ibfk_3` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`id`);
 COMMIT;
-
-
-CREATE TABLE `polubione` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `user_id` int(11) NOT NULL,
-  `produkt_id` int(11) NOT NULL
-  
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-ALTER TABLE `polubione`
-  ADD CONSTRAINT FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
