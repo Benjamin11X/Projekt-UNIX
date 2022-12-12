@@ -81,7 +81,7 @@
                 }
             }
         }
-        $destiny_sql = explode("Projekt_Bozy/", $destiny);
+        $destiny_sql = explode("public_html/", $destiny);
 
         $product_add_sql = "INSERT INTO product VALUES (DEFAULT, '" . $_POST['name'] . "','" . $_POST['subcategory'] . "','" . $_POST['desc'] . "','" . $_POST['price'] . "','" . $_POST['disc'] . "','" . $destiny_sql[1] . "','" . 0 . "')";
         $connection->query($product_add_sql);
@@ -150,7 +150,7 @@
                 }
             }
         }
-        $destiny_sql = explode("Projekt_Bozy/", $destiny);
+        $destiny_sql = explode("public_html/", $destiny);
 
         $product_edit_sql = "UPDATE product SET 
             name='" . $_POST['name'] ."', subcategory_id='" . $_POST['subcategory'] . "', description='" . $_POST['desc'] . "', price='" . $_POST['disc'] . "', picture_url='" . $destiny_sql[1] . "'";

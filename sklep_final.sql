@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 12 Gru 2022, 18:43
--- Wersja serwera: 10.4.25-MariaDB
--- Wersja PHP: 8.1.10
+-- Czas generowania: 12 Gru 2022, 23:04
+-- Wersja serwera: 10.4.24-MariaDB
+-- Wersja PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -180,9 +180,9 @@ INSERT INTO `product` (`id`, `name`, `subcategory_id`, `description`, `price`, `
 (2, 'Gigabyte GeForce RTX 3060 EAGLE OC LHR 12GB GDDR6', 8, 'opis', 1949, 0, 'assets/images/karty_graficzne/2.webp', 13),
 (3, 'Gigabyte GeForce RTX 3090 Ti GAMING OC 24GB GDDR6X', 8, 'opis', 6499, 6300, 'assets/images/karty_graficzne/3.webp', 28),
 (4, 'Gigabyte Radeon RX 6600 EAGLE 8GB GDDR6', 8, 'opis', 1559.99, 1450, 'assets/images/karty_graficzne/4.webp', 5),
-(5, 'Acer Aspire 3 i5-1135G7/12GB/512/Win11 IPS Srebrny', 1, 'opis', 2699, 0, 'assets/images/laptop/1.webp', 25),
-(6, 'ASUS TUF Gaming F15 i5-11400H/16GB/512 RTX3050Ti 144Hz', 1, 'opis', 4099, 4000, 'assets/images/laptopy/2.webp', 31),
-(7, 'G4M3R HERO i7-12700F/32GB/2TB/RTX3060/W11x', 1, 'opis', 8500, 0, 'assets/images/laptopy/3.webp', 8),
+(5, 'Acer Aspire 3 i5-1135G7/12GB/512/Win11 IPS Srebrny', 2, 'opis', 2699, 0, 'assets/images/laptop/1.webp', 25),
+(6, 'ASUS TUF Gaming F15 i5-11400H/16GB/512 RTX3050Ti 144Hz', 2, 'opis', 4099, 4000, 'assets/images/laptopy/2.webp', 31),
+(7, 'G4M3R HERO i7-12700F/32GB/2TB/RTX3060/W11x', 2, 'opis', 8500, 0, 'assets/images/laptopy/3.webp', 8),
 (8, 'Apple iPhone 13 512GB Midnight', 3, 'opis', 6599, 6299, 'assets/images/smartfony/1.webp', 11),
 (9, 'Samsung Galaxy S22+ 8/128GB Green\r\n', 3, 'opis', 4549, 4200, 'assets/images/smartfony/2.webp', 13),
 (10, 'Xiaomi Mi Watch Lite Black', 4, 'opis', 219, 0, 'img10.jpg', 17),

@@ -19,10 +19,13 @@
         $x = 0;
         foreach($filtrs_filtr as $val){
             $x++;
-            if($x == 1){
+            if($x == 1 && count($filtrs_filtr)==1){
+                $searchProducts_sql .= " WHERE (subcategory_id=" . $val . ") ";
+            }
+            else if($x == 1){
                 $searchProducts_sql .= " WHERE (subcategory_id=" . $val . " OR ";
             }
-            if(count($filtrs_filtr)>$x){
+            else if(count($filtrs_filtr)>$x){
                 $searchProducts_sql .= "subcategory_id=" . $val . " OR ";
             }else{
                 $searchProducts_sql .= "subcategory_id=" . $val . ") ";
@@ -52,7 +55,7 @@
             }
         }
         $searchProducts_result = $connection->query($searchProducts_sql);
-
+        echo $searchProducts_sql;
     }else if($_GET['kategoria']){
         $searchProducts_sql .= " WHERE subcategory_id=" . $_GET['kategoria'];
 
@@ -263,7 +266,7 @@
                     <?php
                     $x = 0;
                     while($row = $searchProducts_result->fetch_assoc()){
-                        if(isset($_POST['count'])){
+                        if(isset($_POST['count']) && $_POST['count']==NULL){
                             if($x == $_POST['count']){
                                 break;
                             }
