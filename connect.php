@@ -1,8 +1,8 @@
 <?php
-$host = "mysql.ct8.pl";
-$db_user = "m31366_kondas";
-$db_password = "Kondas!!321";
-$db_name = "m31366_unix";
+$host = "localhost";
+$db_user = "root";
+$db_password = "";
+$db_name = "sklep";
 
 
 $connection = new mysqli($host, $db_user, $db_password, $db_name);
