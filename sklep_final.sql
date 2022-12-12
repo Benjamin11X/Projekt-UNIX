@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 11 Gru 2022, 21:22
--- Wersja serwera: 10.4.24-MariaDB
--- Wersja PHP: 8.1.6
+-- Czas generowania: 12 Gru 2022, 18:43
+-- Wersja serwera: 10.4.25-MariaDB
+-- Wersja PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -176,25 +176,25 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `subcategory_id`, `description`, `price`, `discount`, `picture_url`, `sales`) VALUES
-(1, 'PowerColor Radeon RX 6700 XT Fighter 12GB GDDR6', 8, 'opis', 2299, 0, 'assets/images/KartyGraficzne/1/1.webp', 5),
-(2, 'Gigabyte GeForce RTX 3060 EAGLE OC LHR 12GB GDDR6', 8, 'opis', 1949, 0, 'assets/images/KartyGraficzne/2/1.webp', 13),
-(3, 'Gigabyte GeForce RTX 3090 Ti GAMING OC 24GB GDDR6X', 8, 'opis', 6499, 6300, 'assets/images/KartyGraficzne/3/1.webp', 28),
-(4, 'Gigabyte Radeon RX 6600 EAGLE 8GB GDDR6', 8, 'opis', 1559.99, 1450, 'assets/images/KartyGraficzne/4/1.webp', 5),
-(5, 'Acer Aspire 3 i5-1135G7/12GB/512/Win11 IPS Srebrny', 1, 'opis', 2699, 0, 'assets/images/Laptopy/1/1.webp', 25),
-(6, 'ASUS TUF Gaming F15 i5-11400H/16GB/512 RTX3050Ti 144Hz', 1, 'opis', 4099, 4000, 'assets/images/Laptopy/2/1.webp', 31),
-(7, 'G4M3R HERO i7-12700F/32GB/2TB/RTX3060/W11x', 1, 'opis', 8500, 0, 'assets/images/Laptopy/3/1.webp', 8),
-(8, 'Apple iPhone 13 512GB Midnight', 3, 'opis', 6599, 6299, 'assets/images/Smartfony/1/1.webp', 11),
-(9, 'Samsung Galaxy S22+ 8/128GB Green\r\n', 3, 'opis', 4549, 4200, 'assets/images/Smartfony/2/1.webp', 13),
+(1, 'PowerColor Radeon RX 6700 XT Fighter 12GB GDDR6', 8, 'opis', 2299, 0, 'assets/images/karty_graficzne/1.webp', 5),
+(2, 'Gigabyte GeForce RTX 3060 EAGLE OC LHR 12GB GDDR6', 8, 'opis', 1949, 0, 'assets/images/karty_graficzne/2.webp', 13),
+(3, 'Gigabyte GeForce RTX 3090 Ti GAMING OC 24GB GDDR6X', 8, 'opis', 6499, 6300, 'assets/images/karty_graficzne/3.webp', 28),
+(4, 'Gigabyte Radeon RX 6600 EAGLE 8GB GDDR6', 8, 'opis', 1559.99, 1450, 'assets/images/karty_graficzne/4.webp', 5),
+(5, 'Acer Aspire 3 i5-1135G7/12GB/512/Win11 IPS Srebrny', 1, 'opis', 2699, 0, 'assets/images/laptop/1.webp', 25),
+(6, 'ASUS TUF Gaming F15 i5-11400H/16GB/512 RTX3050Ti 144Hz', 1, 'opis', 4099, 4000, 'assets/images/laptopy/2.webp', 31),
+(7, 'G4M3R HERO i7-12700F/32GB/2TB/RTX3060/W11x', 1, 'opis', 8500, 0, 'assets/images/laptopy/3.webp', 8),
+(8, 'Apple iPhone 13 512GB Midnight', 3, 'opis', 6599, 6299, 'assets/images/smartfony/1.webp', 11),
+(9, 'Samsung Galaxy S22+ 8/128GB Green\r\n', 3, 'opis', 4549, 4200, 'assets/images/smartfony/2.webp', 13),
 (10, 'Xiaomi Mi Watch Lite Black', 4, 'opis', 219, 0, 'img10.jpg', 17),
 (11, 'Xiaomi Mi Band 7 Czarny', 4, 'opis', 209, 0, 'img11.jpg', 21),
-(12, 'Samsung Galaxy Watch 5 44mm Grey', 4, 'opis', 1349, 0, 'assets/images/Smartwatche/3/1.webp', 54),
+(12, 'Samsung Galaxy Watch 5 44mm Grey', 4, 'opis', 1349, 0, 'assets/images/smartwatche/3.webp', 54),
 (13, 'SPC Gear VIRO Plus USB', 22, 'opis', 218, 0, 'img13.jpg', 21),
 (14, 'Razer Barracuda X 2022 Black', 22, 'opis', 449, 0, 'img14.jpg', 12),
-(15, 'SteelSeries Rival 3', 21, 'opis', 159, 0, 'assets/images/Słuchawki/5/1.webp', 28),
+(15, 'SteelSeries Rival 3', 21, 'opis', 159, 0, 'assets/images/sluchawki/5.webp', 28),
 (16, 'SPC Gear GK630K Tournament Kailh Blue RGB', 20, 'opis', 219, 0, 'img16.jpg', 23),
 (17, 'Logitech 2.1 Z333', 19, 'opis', 249, 0, 'img17.jpg', 2),
-(18, 'TCL 43P615', 18, 'opis', 1299, 0, 'assets/images/Telewizory/1/1.webp', 43),
-(19, 'Xiaomi Mi TV Q1E 55\"', 18, 'opis', 2499, 0, 'assets/images/Telewizory/3/1.webp', 41),
+(18, 'TCL 43P615', 18, 'opis', 1299, 0, 'assets/images/telewizory/1.webp', 43),
+(19, 'Xiaomi Mi TV Q1E 55\"', 18, 'opis', 2499, 0, 'assets/images/telewizory/3.webp', 41),
 (20, 'Samsung QE55Q77B', 18, 'opis', 3499, 0, 'img20.jpg', 4),
 (21, 'Sony HT-S40R', 19, 'opis', 1299, 0, 'img21.jpg', 0);
 
