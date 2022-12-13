@@ -272,6 +272,31 @@ ul {
   color: #969696;
 }
 
+.filtrbar__filtr--priceAndDisplay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.filtrbar__filtr--priceAndDisplay-price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+.filtrbar__filtr--priceAndDisplay-display {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+
 .produkt__sliderContainer {
   width: 50%;
 }

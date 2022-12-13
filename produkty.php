@@ -3,7 +3,7 @@
     include 'connect.php';
 
     $searchProducts_sql = "SELECT id, name, price, discount, picture_url FROM product";
-    $subkategorie = array("komputery","laptopy",
+    $subkategorie = array("laptopy","komputery",
         "smartfony","smartwatche","tablety","komorkowe","procesory",
         "karty_graficzne","pamiec_ram","plyty_glowne","dyski","obudowy",
         "chlodzenie","zasilacze","drukarki","monitory","mikrofony",
@@ -92,19 +92,18 @@
         <div class="container-lg">
             <div class="container-fluid filtrbar">
                 <form class="filtrbar__filtr d-flex flex-column-reverse my-4" method="post">
-                <div class="container-fluid d-flex flex-wrap">
-                    <div class="d-flex w-50">
+                <div class="filtrbar__filtr--priceAndDisplay container-fluid d-flex">
+                    <div class="filtrbar__filtr--priceAndDisplay-price">
                         <div>
                             <label for="min">Cena minimalna</label>
                             <input type="number" name="min" id="min">
                         </div>
-                        <p> - </p>
                         <div>
                             <label for="max">Cena maksymalna</label>
                             <input type="number" name="max" id="max">
                         </div>
                     </div>
-                    <div class="d-flex w-50">
+                    <div class="filtrbar__filtr--priceAndDisplay-display">
                         <label for="count">Wyswietlane produkty: </label>
                         <select class="form-select" name="count" id="count">
                             <option selected>Wybierz ilość</option>

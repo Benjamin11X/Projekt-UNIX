@@ -112,8 +112,8 @@
                         <p class="mb-0">Laptopy i komputery</p>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="produkty.php?kategoria=1">Komputery</a></li>
-                        <li><a class="dropdown-item" href="produkty.php?kategoria=2">Laptopy</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=2">Komputery</a></li>
+                        <li><a class="dropdown-item" href="produkty.php?kategoria=1">Laptopy</a></li>
                     </ul>
                 </div>
                 <div class="category-container">
