@@ -55,7 +55,6 @@
             }
         }
         $searchProducts_result = $connection->query($searchProducts_sql);
-        echo $searchProducts_sql;
     }else if($_GET['kategoria']){
         $searchProducts_sql .= " WHERE subcategory_id=" . $_GET['kategoria'];
 
