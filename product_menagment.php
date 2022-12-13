@@ -139,7 +139,7 @@
 
                 $x = 1;
 
-                while(file_exists($destiny)){
+                if(file_exists($destiny)){
                     $filename = "($x)" . $filename;
                     $destiny = __DIR__ . "/assets/images/" . $subfolderName['subcategory_name'] . "/" . $filename; 
                     $x++; 
