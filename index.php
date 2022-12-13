@@ -25,7 +25,7 @@
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/c2d11256b6.js" crossorigin="anonymous" defer></script>
 
-    <!-- IMPORTING STYLES -->
+    <!-- IMPORTNG STYLES -->
     <link rel="stylesheet" href="assets/styles/style.css">
     
     <title>UNIX</title>
@@ -61,8 +61,13 @@
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="showcase__products d-flex">
-                <?php 
+        <div id="bestsellers-container">
+        <button id="btn-left-bestsellers">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div id="bestsellers" class="showcase__products slider-wrapper overflow-hidden d-flex">
+        
+               <?php 
                     while($row = $bestsellers_result->fetch_assoc()){
                         $polubione = false;
                         if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']== true)){
@@ -109,8 +114,13 @@
                     }
                     
                 ?>
-        </div>  
         
+        </div>  
+        <button id="btn-right-bestsellers">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        </div>
+
     </div>
 
     <!-- PROMOTIONS -->
@@ -121,7 +131,13 @@
             <a href="#">Zobacz więcej</a>
         </div>
         <!-- PRODUCTS -->
-        <div class="showcase__products d-flex">
+        <div id="promotions-container">
+        <button id="btn-left-promotions">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div id="promotions" class="showcase__products slider-wrapper overflow-hidden d-flex">
+        
+
                 <?php 
                     while($row = $discounts_result->fetch_assoc()){
                         $polubione = false;
@@ -168,8 +184,15 @@
                         echo '</div>';
                     }
                 ?>
-        </div>  
-    </div>
+               
+       </div>  
+       <button id="btn-right-promotions">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        </div>
+        </div>
+
+    
 
     <!-- NEWS -->
     <div class="container showcase">
