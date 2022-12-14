@@ -62,7 +62,7 @@
         </div>
         <!-- PRODUCTS -->
         <div id="bestsellers-container">
-        <button id="btn-left-bestsellers">
+        <button class="btn-slider-contol btn-slider-contol--left" id="btn-left-bestsellers">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div id="bestsellers" class="showcase__products slider-wrapper overflow-hidden d-flex">
@@ -116,7 +116,7 @@
                 ?>
         
         </div>  
-        <button id="btn-right-bestsellers">
+        <button class="btn-slider-contol btn-slider-contol--right" id="btn-right-bestsellers">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
         </div>
@@ -132,7 +132,7 @@
         </div>
         <!-- PRODUCTS -->
         <div id="promotions-container">
-        <button id="btn-left-promotions">
+        <button class="btn-slider-contol btn-slider-contol--left" id="btn-left-promotions">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div id="promotions" class="showcase__products slider-wrapper overflow-hidden d-flex">
@@ -186,54 +186,10 @@
                 ?>
                
        </div>  
-       <button id="btn-right-promotions">
+       <button class="btn-slider-contol btn-slider-contol--right" id="btn-right-promotions">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
         </div>
-        </div>
-
-    
-
-    <!-- NEWS -->
-    <div class="container showcase">
-        <hr class="bg-danger border-2 border-top border-dark">
-        <div class="showcase__text d-flex justify-content-between align-items-center">
-            <h1>Aktualności</h1>
-            <a href="#">Zobacz więcej</a>
-        </div>
-        <!-- PRODUCTS -->
-        <div class="">
-            
-        </div>
-    </div>
-
-    <!-- TUTORIALS -->
-    <div class="container showcase">
-        <hr class="bg-danger border-2 border-top border-dark">
-        <div class="showcase__text d-flex justify-content-between align-items-center">
-            <h1>Poradniki</h1>
-            <a href="#">Zobacz więcej</a>
-        </div>
-        <!-- PRODUCTS -->
-        <div class="showcase__products d-flex">
-            <?php 
-                while($row = $discounts_result->fetch_assoc()){
-                    echo '<div class="showcase__products--product d-flex flex-column justify-space-between my-3 mx-2">';
-                        echo '<div class="showcase__products--product-img d-flex justify-content-center align-items-center">';
-                            echo '<img src="' . $row['picture_url'] . '" alt="' . $row["name"] . '">';
-                        echo '</div>';
-                        echo '<div class="showcase__products--product-text d-flex flex-column justify-content-end">';
-                            echo '<div class="showcase__products--product-text-name">';
-                                echo '<a href="produkt.php?id=' . $row['id'] . '">' . $row['name'] . '</a>';
-                            echo '</div>';
-                            echo '<div class="showcase__products--product-text-priceAndLinks d-flex justify-content-between align-items-center">';
-                                echo '<p>' . $row['discount'] . 'zł</p>';
-                                echo '<a class="btn btn-success" href="polubienie.php?id=' . $row['id'] .'"><i class="fa-regular fa-heart"></i></a>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
-                }
-            ?>
         </div>
     </div>
 

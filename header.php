@@ -100,7 +100,7 @@
     </nav>  
 
     <!-- BOTTOM NAVBAR -->
-    <div class="container-xxl d-flex">
+    <div class="container-xxl position-relative d-flex">
         <button id="btn-left">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
